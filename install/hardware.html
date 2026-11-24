@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardware setup · TMS NeuroPilot</title>
+<meta name="description" content="Connect your own relay, neuronavigation, robot, stimulator and EMG PC.">
+<meta property="og:title" content="Hardware setup · TMS NeuroPilot">
+<meta property="og:description" content="Connect your own relay, neuronavigation, robot, stimulator and EMG PC.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1">
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li class="current"><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="hardware-setup">Hardware setup<a class="anchor" href="#hardware-setup" aria-hidden="true">#</a></h1>
+<p>Nothing on this page is needed for the simulator. It explains how to connect <em>your</em> hardware to TMS NeuroPilot: which pieces exist, which endpoints TMS NeuroPilot needs, and how to check each one before a subject arrives.</p>
+<p>The suite does not assume a particular lab. One PC can host everything, or each piece can live on its own machine; what matters is that the relay is reachable from every peer and that the settings below point at the right devices. The figure shows one complete setup; your lab will differ in detail, and <a href="#an-example-one-trigger-two-consumers">the trigger example</a> at the end of section 7 states what the wiring has to guarantee.</p>
+<figure>
+  <img src="../assets/diagrams/hardware-setup.png?v=475a9995" alt="Example wiring of a real session: TMS NeuroPilot, robot control, InVesalius and the relay inside a dashed one-or-multiple-machines frame; below them the stimulator, the EMG recording and the robot, with the LAN, the camera and the serial, parallel-trigger and trigger-out lines.">
+  <figcaption>One wiring of a real session, not the only one. The relay topics
+  run over IP, so the controller, the robot control and InVesalius may share a
+  machine or sit on separate ones. The stimulator is controlled over serial and
+  triggered over a parallel line whose T-split also starts the EMG acquisition;
+  the stimulator's trigger output marks the delivered pulse in the
+  neuronavigation; the EMG acquisition writes one sweep file per pulse to a
+  share that the controller reads. The devices are examples: any arm with a
+  driver, any stimulator with a serial interface, any acquisition system that
+  writes a share.</figcaption>
+</figure>
+<h2 id="the-pieces">The pieces<a class="anchor" href="#the-pieces" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Role</th>
+<th>What runs there</th>
+<th>What TMS NeuroPilot needs from it</th>
+</tr></thead><tbody>
+<tr><td><strong>Control PC</strong></td><td>controller + relay</td><td>a display, the <code>neuropilot</code> environment, a writable data folder</td></tr>
+<tr><td><strong>Neuronavigation PC</strong></td><td>InVesalius (group fork)</td><td><code>--remote-host</code> pointed at the relay; the coil tracked</td></tr>
+<tr><td><strong>Robot controller</strong></td><td><code>tms-robot-control</code></td><td>the driver for your arm; a working force sensor</td></tr>
+<tr><td><strong>Stimulator</strong></td><td>your stimulator + its driver (<code>magicpy</code> for MagVenture)</td><td>a serial port and a TTL line on the control PC</td></tr>
+<tr><td><strong>EMG acquisition</strong></td><td>acquisition software writing to a share (CED/Signal is one example)</td><td>an SMB share the control PC can read</td></tr>
+</tbody></table></div>
+<p>The relay is the only network service TMS NeuroPilot itself requires. Everything else is either a local device or a file share.</p>
+<h2 id="1-write-down-your-addresses">1. Write down your addresses<a class="anchor" href="#1-write-down-your-addresses" aria-hidden="true">#</a></h2>
+<p>Fill this in before touching a configuration file; every value has a home in <code>.env</code> or the lab profile.</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Item</th>
+<th>Example</th>
+<th>Your value</th>
+</tr></thead><tbody>
+<tr><td>Relay host</td><td><code>relay.lab.example</code> (or <code>192.0.2.10</code>)</td><td></td></tr>
+<tr><td>Relay port</td><td><code>5000</code></td><td></td></tr>
+<tr><td>Controller PC</td><td>the machine with the display</td><td></td></tr>
+<tr><td>Neuronavigation PC</td><td><code>nav.lab.example</code></td><td></td></tr>
+<tr><td>Robot controller</td><td>same PC as the relay, or another</td><td></td></tr>
+<tr><td>Stimulator serial device</td><td><code>/dev/ttyUSB0</code></td><td></td></tr>
+<tr><td>Stimulator TTL device</td><td><code>/dev/parport0</code></td><td></td></tr>
+<tr><td>EMG PC address</td><td><code>192.0.2.20</code></td><td></td></tr>
+<tr><td>EMG SMB user / password</td><td>a dedicated account</td><td></td></tr>
+<tr><td>Data folder</td><td><code>/data/neuropilot</code></td><td></td></tr>
+</tbody></table></div>
+<p><code>192.0.2.0/24</code> is the documentation range; replace the examples with your addresses. Avoid reusing the defaults (<code>127.0.0.1</code>, <code>192.168.1.2</code>) unless they really are your machines.</p>
+<h2 id="2-network">2. Network<a class="anchor" href="#2-network" aria-hidden="true">#</a></h2>
+<ul>
+<li>Put the control PC, the neuronavigation PC and the robot controller on the same network, or on networks that can reach each other.</li>
+<li>Give the relay host a <strong>stable address</strong> (static or DNS), not a DHCP lease that changes between sessions.</li>
+<li>Allow inbound <strong>TCP 5000</strong> (or your <code>RELAY_PORT</code>) on the relay host, and outbound connections from every peer.</li>
+<li>Allow <strong>TCP 445</strong> from the control PC to the EMG PC for the SMB share.</li>
+<li>Keep the clocks synchronised (NTP). The results CSV and the logs use timestamps from different machines.</li>
+</ul>
+<p>Check reachability from each peer before a session:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">nc -vz relay.lab.example 5000
+smbclient -L //192.0.2.20 -U &lt;user&gt;</code></pre></div>
+<h2 id="3-control-pc">3. Control PC<a class="anchor" href="#3-control-pc" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">conda activate neuropilot
+cp .env.example .env</code></pre></div>
+<p>Set at least:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">RELAY_HOST=relay.lab.example     # or 127.0.0.1 when the relay runs here
+RELAY_PORT=5000
+ROOT_FOLDER=/data/neuropilot</code></pre></div>
+<p>The relay is <code>relay_server.py</code> from <code>tms-robot-control</code>; with</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">TMS_ROBOT_CONTROL_PATH=/opt/tms-robot-control</code></pre></div>
+<p><code>neuropilot robo</code> starts and manages it automatically when the checkout is configured; the Relay card on Connections can start or restart it. For a dry run without hardware, <code>neuropilot relay</code> starts the simulated relay instead.</p>
+<h2 id="4-neuronavigation-pc">4. Neuronavigation PC<a class="anchor" href="#4-neuronavigation-pc" aria-hidden="true">#</a></h2>
+<p>Use the group's InVesalius build: it adds the PubSub topics TMS NeuroPilot relies on (<code>External Controller to Neuronavigation: Create Marker</code>, <code>From Neuronavigation: Coil at target</code>, …). Stock upstream InVesalius does not have them.</p>
+<p>Start it pointed at the relay:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python app.py --remote-host http://relay.lab.example:5000</code></pre></div>
+<p>On that PC:</p>
+<ol>
+<li>Configure the optical tracker and load the ROM files for your probe, head reference and coil.</li>
+<li>Run the registration and accept it.</li>
+<li>Confirm the coil is tracked and visible in the 3-D view.</li>
+<li>If the neuronavigation timestamps the delivered pulse, check that input. In the reference setup the stimulator's trigger output is routed to this PC, and the navigation records the coil pose at the pulse.</li>
+</ol>
+<p>The controller creates a marker per target and waits for <em>Coil at target</em>; it never talks to the camera directly.</p>
+<h2 id="5-robot-controller">5. Robot controller<a class="anchor" href="#5-robot-controller" aria-hidden="true">#</a></h2>
+<p><code>tms-robot-control</code> contains the relay server and the robot driver. Install the driver for <strong>your</strong> arm, and enable whatever remote interface it needs. For example, an Omron arm needs its Modbus slave and a TMFlow listen node enabled; other vendors have their own equivalent. The robot's manual is the authority here, not this page.</p>
+<p>Before the first session:</p>
+<ul>
+<li><strong>Tool point</strong> — the driver's tool centre point must be the coil's stimulation point, not the flange or the handle. Re-measure it if the coil mount changed.</li>
+<li><strong>Force sensor</strong> — the driver must publish a force reading; TMS NeuroPilot uses it as the contact gate before a pulse.</li>
+<li><strong>Reach and collisions</strong> — teach the approach pose and verify that the first target is reachable without self-collision.</li>
+<li><strong>Speeds</strong> — the controller sends the default and tuning speeds at Start; confirm they are the values you expect.</li>
+</ul>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python main_loop.py        # after the relay; then Connect to robot</code></pre></div>
+<p>In InVesalius, press <em>Connect to robot</em> only after <code>main_loop.py</code> is running.</p>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: order matters</p><p>Start the relay, then InVesalius, then the robot driver, then the controller — and press <em>Connect to robot</em> in InVesalius only after the driver is running. TMS NeuroPilot can start the relay and InVesalius for you, but <code>main_loop.py</code> must already be running before you connect in InVesalius. Connecting to a robot whose driver is not running leaves it uninitialised and the first target will not move it.</p></div>
+<h2 id="6-stimulator">6. Stimulator<a class="anchor" href="#6-stimulator" aria-hidden="true">#</a></h2>
+<p>The stimulator is driven over a serial port and triggered over a TTL line, both on the control PC. The shipped driver, <code>magicpy</code>, targets MagVenture; another stimulator needs its own driver behind the same interface.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">sudo usermod -aG dialout,lp &quot;$USER&quot;    # log out and back in afterwards
+ls -l /dev/ttyUSB0 /dev/parport0</code></pre></div>
+<p>If the controller prints <code>Permission denied</code> for the serial device, the group change has not reached the process yet. Log out and back in for the GUI, or run <code>newgrp dialout</code> in the terminal that starts TMS NeuroPilot. The controller prints this fix in the terminal when it sees the error. If <code>/dev/parport0</code> is missing, the controller continues with the serial port only; load the parallel driver with <code>sudo modprobe ppdev</code> and check the <code>lp</code> group only if you actually use the TTL line.</p>
+<p>Set the devices in <strong>Config › Lab</strong> (or <code>STIMULATOR_PORT</code> / <code>STIMULATOR_TTL_PORT</code> in <code>.env</code>). USB-serial adapters usually appear as <code>/dev/ttyUSB0</code>; the parallel port may be <code>/dev/parport0</code> or a different device depending on the card. If the same trigger must also start the EMG acquisition, the stimulator has to delay the pulse after the trigger input; in the reference setup this delay is 0.5 s (see <a href="#an-example-one-trigger-two-consumers">the trigger example</a>). Use the stable <code>/dev/serial/by-id/...</code> path if the adapter enumerates differently across reboots.</p>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: test pulses</p><p>Test the stimulator with the coil away from people and according to your local rules. Check the displayed amplitude on the device itself before the first pulse of a session; the GUI value is not a substitute.</p></div>
+<h2 id="7-emg-acquisition">7. EMG acquisition<a class="anchor" href="#7-emg-acquisition" aria-hidden="true">#</a></h2>
+<p>The EMG acquisition PC writes its files to a folder it shares over SMB (CED / Signal in the reference setup). The controller reads those files; it does not record EMG itself.</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Setting</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr></thead><tbody>
+<tr><td><code>EMG_COMPUTER_IP</code></td><td>address of the EMG PC</td><td><code>192.168.1.2</code></td></tr>
+<tr><td><code>EMG_COMPUTER_USERNAME</code></td><td>SMB user</td><td><code>neuro</code></td></tr>
+<tr><td><code>EMG_COMPUTER_PASSWORD</code></td><td>SMB password</td><td><code>&lt;set in .env&gt;</code></td></tr>
+<tr><td><code>EMG_CONNECT_TIMEOUT_S</code></td><td>initial SMB connection timeout</td><td><code>3</code></td></tr>
+</tbody></table></div>
+<p>The share name is fixed in the acquisition setup, not in TMS NeuroPilot. Confirm that the control PC can list it, and that new files appear there when you tap the electrodes:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">smbclient //192.0.2.20/&lt;share&gt; -U &lt;user&gt;</code></pre></div>
+<h3 id="an-example-one-trigger-two-consumers">An example: one trigger, two consumers<a class="anchor" href="#an-example-one-trigger-two-consumers" aria-hidden="true">#</a></h3>
+<p>The reference setup in the MPI lab solves the timing problem like this; any arrangement with the same properties works.</p>
+<ol>
+<li>The controller sends the fire command over the serial line (intensity, pulse shape) and a TTL on the parallel port.</li>
+<li>The TTL is split: one branch goes to the stimulator's trigger input, the other to the trigger input of the EMG acquisition (CED 1401).</li>
+<li>The stimulator is set to wait <strong>0.5 s</strong> after it receives the trigger before it delivers the pulse. That delay is the head start of the EMG: the acquisition is already running when the pulse arrives, so the sweep contains the pre-activation window and the response.</li>
+<li>The stimulator's trigger output is a second TTL, sent when the pulse is actually delivered. It is routed to the neuronavigation, which records the coil pose of that pulse; this is the pose the E-field is computed for.</li>
+<li>The acquisition software (Signal, on the CED) runs a script that records the sweep and writes one text file per pulse into a folder on the EMG PC.</li>
+<li>TMS NeuroPilot reads the newest file from that folder over SMB after the pulse and reduces it to a peak-to-peak MEP and the pre-activation measures.</li>
+</ol>
+<p>What matters is not this particular wiring but its properties: a TTL that starts the acquisition before the pulse, a pulse confirmation that the neuronavigation can timestamp, and a per-pulse sweep that the controller can read without asking the acquisition PC. A different amplifier or a different delay works as long as those three exist; the MEP windows and the sampling rate then follow from your own hardware (see <a href="../prepare/emg.html">EMG channels and MEP windows</a>).</p>
+<p>Then set <code>EMG_CHANNELS</code>, <code>SAMPLING_RATE</code> and the MEP window for your amplifier (see <a href="../prepare/emg.html">EMG channels and MEP windows</a>).</p>
+<h2 id="8-start-everything">8. Start everything<a class="anchor" href="#8-start-everything" aria-hidden="true">#</a></h2>
+<p>On the control PC (or the machines that host each role), in this order:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash"># 1. relay
+python relay_server.py 5000
+
+# 2. neuronavigation
+python app.py --remote-host http://relay.lab.example:5000
+
+# 3. robot driver
+python main_loop.py
+
+# 4. controller
+neuropilot robo</code></pre></div>
+<p>Then:</p>
+<ol>
+<li>In InVesalius: <em>Connect to robot</em>, verify tracking, confirm the coil.</li>
+<li>In the controller: <strong>Connections</strong> — the stimulator, EMG and robot cards must be green; <strong>Project</strong> — the subject is loaded; <strong>Control</strong> — the E-field mode is selected and Start is enabled.</li>
+</ol>
+<h2 id="9-verify-each-system">9. Verify each system<a class="anchor" href="#9-verify-each-system" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Check</th>
+<th>Where</th>
+</tr></thead><tbody>
+<tr><td>relay reachable from every peer</td><td><code>nc -vz &lt;relay&gt; 5000</code></td></tr>
+<tr><td>stimulator answers on its port</td><td><strong>Connections › Stimulator</strong> details</td></tr>
+<tr><td>EMG share readable</td><td><strong>Connections › EMG</strong>, or <code>smbclient</code></td></tr>
+<tr><td>robot health and force sensor</td><td><strong>Connections › Robot</strong> details</td></tr>
+<tr><td>InVesalius creates a marker</td><td>press Start; the marker appears</td></tr>
+<tr><td>coil reaches the target</td><td>the robot moves and <em>Coil at target</em> arrives</td></tr>
+<tr><td>a test pulse produces an MEP</td><td><strong>MEP results</strong> after one pulse</td></tr>
+</tbody></table></div>
+<p><code>Awaiting valid pressure data</code> on the robot side means the force sensor has not produced a reading yet: touch it once and the stream starts.</p>
+<h2 id="example-configuration">Example configuration<a class="anchor" href="#example-configuration" aria-hidden="true">#</a></h2>
+<p>A minimal <code>.env</code> for a lab where the relay and controller run on the same PC and the other pieces are remote:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">RELAY_HOST=127.0.0.1
+RELAY_PORT=5000
+ROOT_FOLDER=/data/neuropilot
+STIMULATOR_PORT=/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A10K...-if00-port0
+STIMULATOR_TTL_PORT=/dev/parport0
+EMG_COMPUTER_IP=192.0.2.20
+EMG_COMPUTER_USERNAME=emg
+EMG_COMPUTER_PASSWORD=change-me
+EMG_CHANNELS=FDI,APB,ADM
+SAMPLING_RATE=4000
+CUTOFF_FREQ=500
+TMS_PULSE_TIME=5
+START_MEP=10
+END_MEP=100
+ONLINE_FEM_SOLVER=pardiso
+ONLINE_FEM_ANISOTROPY=scalar</code></pre></div>
+<p>The same values can be set in <strong>Config › Lab</strong> and then live in <code>~/.neuropilot/lab.yaml</code>; <code>.env</code> pins a value and wins over the profile (see <a href="../config/model.html">Settings model</a>).</p>
+<h2 id="migrating-an-existing-installation">Migrating an existing installation<a class="anchor" href="#migrating-an-existing-installation" aria-hidden="true">#</a></h2>
+<ul>
+<li>Keep the old <code>.env</code> and compare it with <code>.env.example</code>; the keys are documented in the <a href="../config/env.html"><code>.env</code> reference</a>.</li>
+<li>Move the hardware values you want to edit in the GUI into <code>lab.yaml</code> (<strong>Config › Lab › Save lab profile</strong>), and leave the bootstrap keys in <code>.env</code>.</li>
+<li>If a value refuses to change, it is still pinned in <code>.env</code> or exported in the shell; the status line on Config › Lab counts those overrides.</li>
+</ul>
+<h2 id="what-the-relay-does-not-carry">What the relay does <em>not</em> carry<a class="anchor" href="#what-the-relay-does-not-carry" aria-hidden="true">#</a></h2>
+<p>Images, meshes and EMG files are read from disk, not sent over the relay. The relay carries poses, topic strings and small status payloads only. A fast network is nice; a <em>reliable</em> one matters, because a lost message is not retried (see <a href="../reference/relay.html">Relay protocol</a>).</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="verify.html">Verify the installation</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../install/install.html"><span>Previous</span>Install the suite</a>
+<a class="next" href="../install/verify.html"><span>Next</span>Verify the installation</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-pieces">The pieces</a></li><li class="l2"><a href="#1-write-down-your-addresses">1. Write down your addresses</a></li><li class="l2"><a href="#2-network">2. Network</a></li><li class="l2"><a href="#3-control-pc">3. Control PC</a></li><li class="l2"><a href="#4-neuronavigation-pc">4. Neuronavigation PC</a></li><li class="l2"><a href="#5-robot-controller">5. Robot controller</a></li><li class="l2"><a href="#6-stimulator">6. Stimulator</a></li><li class="l2"><a href="#7-emg-acquisition">7. EMG acquisition</a></li><li class="l3"><a href="#an-example-one-trigger-two-consumers">An example: one trigger, two consumers</a></li><li class="l2"><a href="#8-start-everything">8. Start everything</a></li><li class="l2"><a href="#9-verify-each-system">9. Verify each system</a></li><li class="l2"><a href="#example-configuration">Example configuration</a></li><li class="l2"><a href="#migrating-an-existing-installation">Migrating an existing installation</a></li><li class="l2"><a href="#what-the-relay-does-not-carry">What the relay does not carry</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

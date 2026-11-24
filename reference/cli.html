@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Command line · TMS NeuroPilot</title>
+<meta name="description" content="Every subcommand and flag, with the environment it expects.">
+<meta property="og:title" content="Command line · TMS NeuroPilot">
+<meta property="og:description" content="Every subcommand and flag, with the environment it expects.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8">
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li class="current"><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="command-line">Command line<a class="anchor" href="#command-line" aria-hidden="true">#</a></h1>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">neuropilot {sim,relay,controller,real,manual,training}</code></pre></div>
+<p>Run <code>neuropilot</code> with no arguments to get a small mode-selection dialog.</p>
+<h2 id="neuropilot-sim"><code>neuropilot sim</code><a class="anchor" href="#neuropilot-sim" aria-hidden="true">#</a></h2>
+<p>Starts the full simulated stack: relay → neuronavigation ∥ robot → controller.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot sim
+neuropilot sim --components relay,robot      # a subset, for debugging</code></pre></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Flag</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><code>--components</code></td><td><code>relay,nav,robot,controller</code></td><td>comma-separated subset</td></tr>
+</tbody></table></div>
+<p>The supervisor waits for each component's readiness probe, prefixes the logs by role and stops everything on Ctrl+C. Exit code 0 on a normal shutdown.</p>
+<h2 id="neuropilot-relay"><code>neuropilot relay</code><a class="anchor" href="#neuropilot-relay" aria-hidden="true">#</a></h2>
+<p>Starts only the simulated relay.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot relay</code></pre></div>
+<p>Useful when the other components run in separate terminals or on another machine.</p>
+<h2 id="neuropilot-controller"><code>neuropilot controller</code><a class="anchor" href="#neuropilot-controller" aria-hidden="true">#</a></h2>
+<p>Starts only the controller.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot controller --sim       # simulation (peers must already run)
+neuropilot controller --robo      # real hardware
+neuropilot controller --manual    # real hardware, no robot
+neuropilot controller --training  # real TMS, virtual EMG, no robot
+neuropilot controller             # asks for the mode in a dialog</code></pre></div>
+<p><code>--sim</code>, <code>--robo</code>, <code>--manual</code> and <code>--training</code> are mutually exclusive.</p>
+<p>For <code>--robo</code>, <code>--manual</code>, and <code>--training</code>, the controller also starts a local InVesalius by default and starts the relay when <code>TMS_ROBOT_CONTROL_PATH</code> is configured. Use <code>--no-invesalius</code> to suppress InVesalius, or <code>--invesalius PATH</code> to provide an environment, wrapper, or checkout for this run.</p>
+<h2 id="neuropilot-robo"><code>neuropilot robo</code><a class="anchor" href="#neuropilot-robo" aria-hidden="true">#</a></h2>
+<p>Real-hardware mode.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot robo
+neuropilot robo --launch-relay</code></pre></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Flag</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><code>--launch-relay</code></td><td>compatibility flag; a configured relay is started automatically</td></tr>
+<tr><td><code>--no-invesalius</code></td><td>do not start InVesalius automatically</td></tr>
+<tr><td><code>--invesalius PATH</code></td><td>use this environment, wrapper, or checkout for this run</td></tr>
+</tbody></table></div>
+<p>If no relay is running, the controller starts one when <code>TMS_ROBOT_CONTROL_PATH</code> points to a <code>tms-robot-control</code> checkout. If the path is not configured, a dialog asks for it and the selection is saved. If the relay cannot be started, the GUI and terminal show the reason and the stack exits. An already-running relay is reused.</p>
+<p>The same relay and InVesalius flags are available on <code>manual</code> and <code>training</code>.</p>
+<h2 id="neuropilot-manual"><code>neuropilot manual</code><a class="anchor" href="#neuropilot-manual" aria-hidden="true">#</a></h2>
+<p>Real hardware, no robot.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot manual
+neuropilot manual --launch-relay</code></pre></div>
+<p>Same relay behaviour as <code>neuropilot robo</code>.</p>
+<h2 id="neuropilot-training"><code>neuropilot training</code><a class="anchor" href="#neuropilot-training" aria-hidden="true">#</a></h2>
+<p>Real stimulator and InVesalius, virtual EMG, no robot. The operator holds the coil and the MEP trace is generated from the E-field.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot training
+neuropilot training --launch-relay</code></pre></div>
+<p>Same relay behaviour as <code>neuropilot robo</code>. Start InVesalius before the controller; no robot driver or EMG PC is needed. The channel sources come from the project.</p>
+<h2 id="robot-registry">Robot registry<a class="anchor" href="#robot-registry" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python -m neuropilot.sim_robot.robots --list
+python -m neuropilot.sim_robot.robots --check omron   # or the key from --list</code></pre></div>
+<p><code>--check</code> validates the MuJoCo model, the URDF, the base body, the tool site and the IK mask. Exit code 1 on a problem.</p>
+<h2 id="documentation">Documentation<a class="anchor" href="#documentation" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python docs/site/build.py                 # build into public/
+python docs/site/build.py --out /tmp/site # somewhere else
+python docs/site/build.py --serve 8000    # build and preview
+python docs/site/build.py --check         # verify links, then remove the output</code></pre></div>
+<p><code>--check</code> is what CI runs; it fails on a broken internal link, an orphan page or a missing nav entry.</p>
+<h2 id="tests">Tests<a class="anchor" href="#tests" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">pytest                          # everything (GUI tests need a display)
+pytest -m &quot;not gui&quot; -q          # the headless set
+pytest tests/test_theme.py -v   # one file
+scripts/run_tests.sh            # the headless set with the CI interpreter
+UPDATE_GUI_BASELINES=1 pytest tests/test_gui_snapshots.py</code></pre></div>
+<h2 id="data-preparation">Data preparation<a class="anchor" href="#data-preparation" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python scripts/01_create_head_model.py -s &lt;subject.hdf5&gt; -m &lt;mesh_idx&gt;
+python scripts/02_create_roi_efield_library.py --mesh-msh … --roi-hdf5 … \
+    --coil … --target x y z --out e.hdf5
+python scripts/03_create_optimized_sequences.py --e-hdf5 e.hdf5 --n-stim 200
+python scripts/sort_coil_placements.py --matsimnibs … --coil-seq … --out-dir …</code></pre></div>
+<p>Flags are documented in <a href="../prepare/subject-data.html">Subject data</a> and <a href="../prepare/placements.html">Coil placements</a>.</p>
+<h2 id="environment">Environment<a class="anchor" href="#environment" aria-hidden="true">#</a></h2>
+<p>Every command reads the same configuration chain:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">shell environment  &gt;  .env  &gt;  ~/.neuropilot/lab.yaml  &gt;  defaults</code></pre></div>
+<p>One-off overrides work as expected:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">ROOT_FOLDER=/tmp/np RELAY_PORT=5100 neuropilot sim</code></pre></div>
+<h2 id="exit-codes">Exit codes<a class="anchor" href="#exit-codes" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td>0</td><td>normal shutdown, or the dialog was closed</td></tr>
+<tr><td>1</td><td>a required setting is missing (e.g. <code>--launch-relay</code> without a path), or <code>--check</code> found a problem</td></tr>
+<tr><td>non-zero from a child</td><td>the supervisor stops the stack and exits</td></tr>
+</tbody></table></div>
+<h2 id="cheat-sheet">Cheat sheet<a class="anchor" href="#cheat-sheet" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash"># install
+conda activate neuropilot &amp;&amp; pip install -e . --no-deps &amp;&amp; cp .env.example .env
+
+# run
+neuropilot sim                     # everything, simulated
+neuropilot robo --launch-relay     # lab, with the production relay
+neuropilot manual                  # lab, no robot
+
+# check
+python -m neuropilot.sim_robot.robots --check omron   # or the key from --list
+pytest -m &quot;not gui&quot; -q
+python docs/site/build.py --check
+
+# data
+python scripts/02_create_roi_efield_library.py --mesh-msh … --roi-hdf5 … \
+       --coil … --target -37 -21 58 --out e.hdf5</code></pre></div>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="testing.html">Testing and CI</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../reference/relay.html"><span>Previous</span>Relay protocol</a>
+<a class="next" href="../reference/testing.html"><span>Next</span>Testing and CI</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#neuropilot-sim">neuropilot sim</a></li><li class="l2"><a href="#neuropilot-relay">neuropilot relay</a></li><li class="l2"><a href="#neuropilot-controller">neuropilot controller</a></li><li class="l2"><a href="#neuropilot-robo">neuropilot robo</a></li><li class="l2"><a href="#neuropilot-manual">neuropilot manual</a></li><li class="l2"><a href="#neuropilot-training">neuropilot training</a></li><li class="l2"><a href="#robot-registry">Robot registry</a></li><li class="l2"><a href="#documentation">Documentation</a></li><li class="l2"><a href="#tests">Tests</a></li><li class="l2"><a href="#data-preparation">Data preparation</a></li><li class="l2"><a href="#environment">Environment</a></li><li class="l2"><a href="#exit-codes">Exit codes</a></li><li class="l2"><a href="#cheat-sheet">Cheat sheet</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

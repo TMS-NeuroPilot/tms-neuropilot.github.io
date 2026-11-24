@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEP results page · TMS NeuroPilot</title>
+<meta name="description" content="The MEP trend, the live EMG trace and how to read them.">
+<meta property="og:title" content="MEP results page · TMS NeuroPilot">
+<meta property="og:description" content="The MEP trend, the live EMG trace and how to read them.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section active" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4">
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li class="current"><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="mep-results-page">MEP results page<a class="anchor" href="#mep-results-page" aria-hidden="true">#</a></h1>
+<p>Two plots and one job: show whether the stimulation is producing motor-evoked potentials, and let you inspect and exclude individual pulses.</p>
+<figure>
+  <img src="../assets/screenshots/mep-results.png?v=475a9995" alt="The MEP results page after several pulses: the MEP trend on top and the last EMG sweep below.">
+  <figcaption>Top: peak-to-peak MEP per pulse and channel. Bottom: the filtered
+  EMG sweep of one pulse, with navigation and the inclusion checkbox.</figcaption>
+</figure>
+<h2 id="the-mep-trend-top">The MEP trend (top)<a class="anchor" href="#the-mep-trend-top" aria-hidden="true">#</a></h2>
+<ul>
+<li><strong>x-axis</strong>: target index / pulse number, in acquisition order.</li>
+<li><strong>y-axis</strong>: peak-to-peak amplitude, mV.</li>
+<li><strong>one line per EMG channel</strong>, in the channel order of <code>EMG_CHANNELS</code>.</li>
+<li>Pulses excluded from the mapping are marked, so you can see whether an exclusion changed the trend.</li>
+</ul>
+<p>The plot is redrawn after every pulse. A flat line at a small amplitude usually means no response (or no contact); a line that collapses mid-session is worth investigating before the next target.</p>
+<h2 id="the-emg-signal-bottom">The EMG signal (bottom)<a class="anchor" href="#the-emg-signal-bottom" aria-hidden="true">#</a></h2>
+<p>The last pulse's filtered sweep:</p>
+<ul>
+<li><strong>x-axis</strong>: time, seconds, relative to the recording.</li>
+<li><strong>y-axis</strong>: amplitude, per channel.</li>
+<li>The low-pass filter uses <code>CUTOFF_FREQ</code> and <code>SAMPLING_RATE</code>.</li>
+<li>The title shows the pulse (<code>3. EMG</code>), and the window is the one used for the MEP extraction.</li>
+</ul>
+<h3 id="navigating-and-excluding">Navigating and excluding<a class="anchor" href="#navigating-and-excluding" aria-hidden="true">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Effect</th>
+</tr></thead><tbody>
+<tr><td><strong>&lt; Previous EMG</strong></td><td>show the previous pulse's sweep</td></tr>
+<tr><td><strong>Next EMG &gt;</strong></td><td>show the next pulse's sweep</td></tr>
+<tr><td><strong>Include MEP in Mapping</strong></td><td>include/exclude this pulse from the regression</td></tr>
+</tbody></table></div>
+<p>Excluding a pulse is not cosmetic: the controller drops it from the analysis matrix and from the R² computation, and marks it in the export. Use it for a pulse that is visibly an artefact (movement, electrical noise, a double discharge) — and record why in the session notes.</p>
+<div class="admonition tip"><p class="admonition-title"><span class="icon">💡</span>Exclusion is reversible</p><p>Re-check the box and the pulse returns to the mapping; the next analysis uses it again. Nothing is deleted from the results CSV.</p></div>
+<h2 id="what-no-mep-looks-like">What "no MEP" looks like<a class="anchor" href="#what-no-mep-looks-like" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Pattern</th>
+<th>Likely cause</th>
+</tr></thead><tbody>
+<tr><td>flat, low-amplitude noise on every channel</td><td>stimulator not firing, or coil not on the head</td></tr>
+<tr><td>large stimulus artefact, no response after it</td><td>the MEP window starts too early or too late</td></tr>
+<tr><td>response only on one channel</td><td>the other electrodes lost contact</td></tr>
+<tr><td>response that decays over the session</td><td>coil heating, fatigue, or a real physiological effect</td></tr>
+</tbody></table></div>
+<p>See <a href="../prepare/emg.html">EMG channels and MEP windows</a> for the window parameters.</p>
+<h2 id="what-is-stored">What is stored<a class="anchor" href="#what-is-stored" aria-hidden="true">#</a></h2>
+<p>Every pulse is appended to the results CSV with its amplitude per channel and its pre-activation values. Excluded pulses carry the exclusion flag.</p>
+<p>Each plot has a <strong>Save to .png</strong> button in its left pane. It saves the currently visible plot with a timestamped filename under <code>ROOT_FOLDER</code>:</p>
+<ul>
+<li>MEP trend → <code>P2P_PLOTS_FOLDER_PATH</code> (<code>p2p_plots</code> by default)</li>
+<li>EMG signal → <code>EMG_PLOTS_FOLDER_PATH</code> (<code>emg_plots</code> by default)</li>
+</ul>
+<p>The folders are created only when the corresponding button is clicked.</p>
+<h2 id="a-note-on-pynibs">A note on pynibs<a class="anchor" href="#a-note-on-pynibs" aria-hidden="true">#</a></h2>
+<p>The extraction, filtering and peak-to-peak computation come from <code>pynibs</code>, the group's analysis package. The controller calls it with the environment values above; it does not re-implement the signal processing. If you need a different filter or a different amplitude definition, change the study parameters, not the GUI.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="cortical.html">Cortical results page</a></li>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../gui/control.html"><span>Previous</span>Control page</a>
+<a class="next" href="../gui/cortical.html"><span>Next</span>Cortical results page</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-mep-trend-top">The MEP trend (top)</a></li><li class="l2"><a href="#the-emg-signal-bottom">The EMG signal (bottom)</a></li><li class="l3"><a href="#navigating-and-excluding">Navigating and excluding</a></li><li class="l2"><a href="#what-no-mep-looks-like">What &quot;no MEP&quot; looks like</a></li><li class="l2"><a href="#what-is-stored">What is stored</a></li><li class="l2"><a href="#a-note-on-pynibs">A note on pynibs</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

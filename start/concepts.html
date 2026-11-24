@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key concepts · TMS NeuroPilot</title>
+<meta name="description" content="Targets, pulses, E-fields, MEPs, R² maps and the vocabulary the rest of the site uses.">
+<meta property="og:title" content="Key concepts · TMS NeuroPilot">
+<meta property="og:description" content="Targets, pulses, E-fields, MEPs, R² maps and the vocabulary the rest of the site uses.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section active" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0">
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li class="current"><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="key-concepts">Key concepts<a class="anchor" href="#key-concepts" aria-hidden="true">#</a></h1>
+<p>Every other page assumes the vocabulary on this one. It is short on purpose: five quantities, one loop.</p>
+<h2 id="the-five-quantities">The five quantities<a class="anchor" href="#the-five-quantities" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Quantity</th>
+<th>What it is</th>
+<th>Where you meet it</th>
+</tr></thead><tbody>
+<tr><td><strong>Target</strong></td><td>A coil pose the protocol wants stimulated: a position and an orientation, in SimNIBS head space.</td><td><code>search_positions.hdf5</code> (the placements library), the target-order file</td></tr>
+<tr><td><strong>Pulse</strong></td><td>One stimulation at one target. A target is usually repeated <code>n_repetitions</code> times.</td><td>the Control page, the results CSV</td></tr>
+<tr><td><strong>E-field</strong></td><td>The electric field that pulse delivered to each element of the cortical region of interest, in V/m.</td><td><code>e.hdf5</code> (precomputed) or the online solver</td></tr>
+<tr><td><strong>MEP</strong></td><td>The peak-to-peak amplitude of the EMG response that pulse evoked, per channel, in mV.</td><td>the MEP results page, the results CSV</td></tr>
+<tr><td><strong>R²</strong></td><td>How well the MEP amplitudes are explained by the E-field, per cortical element and per channel.</td><td>the Cortical results page, the exported <code>_roi_r2.csv</code></td></tr>
+</tbody></table></div>
+<p>The main output is the last row: a map of R² over the cortex says <em>where</em> the stimulation effect is best explained by the field the coil delivered. It is a data-driven localisation of the stimulated site, not a significance map.</p>
+<h2 id="the-loop">The loop<a class="anchor" href="#the-loop" aria-hidden="true">#</a></h2>
+<figure>
+  <img src="../assets/diagrams/mapping-loop.svg?v=475a9995" alt="The mapping loop: INIT, LOAD TARGET, SEND MARKER, START TRACKING, WAIT FOR TARGET REACHED, FIRE TMS PULSE, COLLECT DATA, ANALYSE, COMPLETE.">
+  <figcaption>One pulse is one pass through the loop. The E-field row for the
+  pulse is chosen or computed while the robot is still moving, so the analysis
+  has everything it needs when the EMG arrives.</figcaption>
+</figure>
+<ol>
+<li><strong>Choose the next target</strong> — the next entry of the target-order file, or a new marker requested from the neuronavigation.</li>
+<li><strong>Move the coil</strong> — the robot receives the target pose, plans, moves and presses the coil against the head.</li>
+<li><strong>Wait for the target</strong> — the neuronavigation reports the realised coil pose and whether it is within tolerance (<code>Coil at target</code>).</li>
+<li><strong>Fire</strong> — the stimulator delivers one pulse at the configured amplitude.</li>
+<li><strong>Collect</strong> — the EMG is recorded and the MEP is extracted from the window around the pulse.</li>
+<li><strong>Associate the field</strong> — the E-field of <em>that</em> coil pose is taken from the precomputed library or solved online.</li>
+<li><strong>Analyse</strong> — the pulse is appended to the regression; R² is recomputed and the cortical map is redrawn.</li>
+</ol>
+<p>The loop repeats until the target list is exhausted or the operator presses <strong>Finish</strong>. <a href="../run/mapping-loop.html">The mapping loop</a> documents the state machine in detail; <a href="../run/efield-modes.html">E-field modes</a> covers step 6.</p>
+<h2 id="why-the-e-field-is-per-pulse">Why the E-field is per pulse<a class="anchor" href="#why-the-e-field-is-per-pulse" aria-hidden="true">#</a></h2>
+<p>A naive mapping assumes every pulse delivers the same field to the same spot. In practice the coil sits a few millimetres away from the planned pose, the head moves, and the handle angle changes. The field therefore differs between pulses, and a regression against a nominal field blurs the map.</p>
+<p>TMS NeuroPilot records the field of the realised pose for every pulse. Each row of the regression is <code>(E-field vector, MEP amplitude)</code> for one pulse, so a pulse that landed 3 mm off contributes the field it actually delivered. This is also why the E-field mode can be switched mid-run without corrupting anything: the mode decides how the row is produced, not what the row means.</p>
+<h2 id="the-regression">The regression<a class="anchor" href="#the-regression" aria-hidden="true">#</a></h2>
+<p>After at least <strong>three pulses</strong>, the analysis fits, for each EMG channel and each ROI element:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">MEP_amplitude  ~  f(E_field at that element)</code></pre></div>
+<p>The coefficient of determination of that fit is the R² you see on the mesh. One fit per element is what makes the map: elements where the field varies with the response in a consistent way get a high R²; elements where it does not get a low one.</p>
+<p>The shape of <code>f</code> is selectable per study (nine options, see <a href="../results/analysis.html">Analysis and fits</a>). The default is a linear fit; a sigmoid is closer to the physiological recruitment curve but needs more pulses to constrain four parameters.</p>
+<div class="admonition note"><p class="admonition-title"><span class="icon">ℹ</span>R² is not a significance test</p><p>A high R² says the field explains the variance in this sample. It does not say the effect is significant, nor that the element is the source of the MEP. Treat the map as a localisation aid and report it with the pulse count, the fit function and the E-field mode.</p></div>
+<h2 id="what-the-modes-change">What the modes change<a class="anchor" href="#what-the-modes-change" aria-hidden="true">#</a></h2>
+<p>The quantities above are identical in all run modes. Only who provides the peers changes:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Mode</th>
+<th>Neuronavigation</th>
+<th>Robot</th>
+<th>Stimulator</th>
+<th>EMG</th>
+</tr></thead><tbody>
+<tr><td><code>sim</code></td><td>virtual (<code>sim_nav</code>)</td><td>virtual MuJoCo (<code>sim_robot</code>)</td><td>virtual</td><td>virtual</td></tr>
+<tr><td><code>robo</code></td><td>InVesalius</td><td>your robot via <code>tms-robot-control</code></td><td>your stimulator via <code>magicpy</code></td><td>your EMG PC's share</td></tr>
+<tr><td><code>manual</code></td><td>InVesalius</td><td>none: the operator moves the coil</td><td>your stimulator</td><td>your EMG PC</td></tr>
+<tr><td><code>training</code></td><td>InVesalius</td><td>none: the operator moves the coil</td><td>your stimulator</td><td>virtual, driven by the E-field</td></tr>
+</tbody></table></div>
+<p><a href="../run/modes.html">Run modes</a> compares them in full.</p>
+<h2 id="what-tms-neuropilot-is-not">What TMS NeuroPilot is not<a class="anchor" href="#what-tms-neuropilot-is-not" aria-hidden="true">#</a></h2>
+<ul>
+<li>It is <strong>not a medical device</strong>. It is research software; every real session needs ethics approval and local MR-safety rules.</li>
+<li>It is <strong>not a neuronavigation system</strong>. It asks InVesalius to create markers and reports realised coil poses; it does not track the head itself.</li>
+<li>It is <strong>not a stimulator driver</strong>. It sends fire commands over a serial line and TTL pulse; the stimulator's own safety limits still apply.</li>
+<li>It is <strong>not a robot controller</strong>. It sends poses; the robot controller owns the motion, the force limits and the collision checking.</li>
+</ul>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="units.html">Units and frames</a> — the coordinate conventions that make the targets make sense.</li>
+<li><a href="../reference/architecture.html">Architecture</a> — the processes behind the loop.</li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a> — the state machine, step by step.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../start/quickstart.html"><span>Previous</span>Quick start</a>
+<a class="next" href="../start/units.html"><span>Next</span>Units and frames</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-five-quantities">The five quantities</a></li><li class="l2"><a href="#the-loop">The loop</a></li><li class="l2"><a href="#why-the-e-field-is-per-pulse">Why the E field is per pulse</a></li><li class="l2"><a href="#the-regression">The regression</a></li><li class="l2"><a href="#what-the-modes-change">What the modes change</a></li><li class="l2"><a href="#what-tms-neuropilot-is-not">What TMS NeuroPilot is not</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

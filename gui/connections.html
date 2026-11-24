@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connections page · TMS NeuroPilot</title>
+<meta name="description" content="Health of the stimulator, EMG, robot and neuronavigation, with recovery.">
+<meta property="og:title" content="Connections page · TMS NeuroPilot">
+<meta property="og:description" content="Health of the stimulator, EMG, robot and neuronavigation, with recovery.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section active" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4">
+<li><a href="../gui/project.html">Project page</a></li>
+<li class="current"><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="connections-page">Connections page<a class="anchor" href="#connections-page" aria-hidden="true">#</a></h1>
+<p>The <strong>Connections</strong> page is the health dashboard: one card per system, a status LED, the last message, the connection details and a <strong>Reconnect</strong> button. Start is gated on this page being green.</p>
+<figure>
+  <img src="../assets/screenshots/connections-sim.png?v=475a9995" alt="The Connections page in simulation mode with the relay, stimulator, EMG and robot cards green.">
+  <figcaption>Four cards in simulation. Each shows the status, the last
+  message and the connection details the system publishes.</figcaption>
+</figure>
+<h2 id="the-cards">The cards<a class="anchor" href="#the-cards" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Card</th>
+<th>Backend (simulation)</th>
+<th>Backend (real)</th>
+</tr></thead><tbody>
+<tr><td><strong>Relay</strong></td><td><code>sim_relay</code> (supervisor)</td><td>production <code>relay_server.py</code>; TMS NeuroPilot can start and restart it</td></tr>
+<tr><td><strong>Stimulator</strong></td><td>virtual stimulator</td><td>your stimulator via <code>magicpy</code> on <code>STIMULATOR_PORT</code></td></tr>
+<tr><td><strong>EMG</strong></td><td>virtual EMG computer</td><td>your EMG PC's share (<code>EMG_COMPUTER_IP</code>)</td></tr>
+<tr><td><strong>Robot</strong></td><td>virtual MuJoCo robot</td><td><code>tms-robot-control</code> over the relay</td></tr>
+</tbody></table></div>
+<p>In manual and training modes the robot card is absent. In training the stimulator card is real and the EMG card is the virtual EMG. The relay card is present in every mode: in simulation it is owned by the supervisor; in real, manual and training modes TMS NeuroPilot can start and restart a production relay.</p>
+<h2 id="what-a-card-shows">What a card shows<a class="anchor" href="#what-a-card-shows" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><strong>Status</strong></td><td><code>—</code> (unknown), <code>OK</code>, or <code>ERROR</code>, with the LED colour</td></tr>
+<tr><td><strong>Message</strong></td><td>the last status message, e.g. <code>No Connection</code></td></tr>
+<tr><td><strong>Last update</strong></td><td>when the last health packet arrived</td></tr>
+<tr><td><strong>Details</strong></td><td>up to five label/value rows published by the system</td></tr>
+<tr><td><strong>Reconnect</strong></td><td>enabled when a recovery is available for the current error</td></tr>
+</tbody></table></div>
+<h3 id="detail-rows-you-will-see">Detail rows you will see<a class="anchor" href="#detail-rows-you-will-see" aria-hidden="true">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>System</th>
+<th>Details</th>
+</tr></thead><tbody>
+<tr><td>Relay</td><td>URL, mode (simulated/production), managed by, PID and log file</td></tr>
+<tr><td>Stimulator</td><td>port, TTL port, connected, model, serial number, coil type, waveform, temperature</td></tr>
+<tr><td>EMG</td><td>transport (<code>SMB2</code>), host, share, user, channel names and count</td></tr>
+<tr><td>Robot</td><td>relay URL, robot ID, model/firmware from the robot's <code>info{}</code>, link state</td></tr>
+</tbody></table></div>
+<p>The rows are populated in the order the system publishes them; unused rows are hidden, so a system with two details does not leave three empty lines.</p>
+<h2 id="led-states">LED states<a class="anchor" href="#led-states" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>LED</th>
+<th>Status</th>
+<th>Operator action</th>
+</tr></thead><tbody>
+<tr><td>grey</td><td><code>—</code> / <code>Not Initialized</code></td><td>wait a second; press <strong>Reconnect</strong></td></tr>
+<tr><td>green</td><td><code>OK</code></td><td>none</td></tr>
+<tr><td>red</td><td><code>ERROR</code></td><td>read the message; press <strong>Reconnect</strong>; check the hardware</td></tr>
+</tbody></table></div>
+<p>The health loop runs at about 1 Hz. A card can lag a second behind reality; the <em>Last update</em> field tells you how stale it is.</p>
+<h2 id="the-start-gate">The Start gate<a class="anchor" href="#the-start-gate" aria-hidden="true">#</a></h2>
+<p>Start is enabled only when:</p>
+<ul>
+<li>the <strong>relay</strong> is ready,</li>
+<li>the <strong>robot</strong> is ready (or the session is in manual or training mode),</li>
+<li>the <strong>stimulator</strong> is ready,</li>
+<li>the <strong>EMG</strong> is ready,</li>
+<li>the <strong>E-field mode</strong> has what it needs (library loaded, or online solver ready).</li>
+</ul>
+<p>The hint under the E-field radios names the missing piece when Start is grey.</p>
+<h2 id="recovery">Recovery<a class="anchor" href="#recovery" aria-hidden="true">#</a></h2>
+<p><strong>Reconnect</strong> runs the system's own recovery path: it re-opens the serial port, re-mounts the share, or re-sends the robot handshake. It does not restart the stack and it does not interrupt a running mapping — the loop holds while the system is down and continues when it recovers.</p>
+<p>If the button is disabled, the system reports no software recovery for its current error; the message says what failed and the fix is on the hardware side (cable, power, network, robot mode).</p>
+<p>The relay card uses <strong>Start relay</strong> when no relay is running and <strong>Restart relay</strong> when TMS NeuroPilot owns one. An externally started relay is shown as <code>External</code> and is left alone.</p>
+<h2 id="real-mode-order">Real mode order<a class="anchor" href="#real-mode-order" aria-hidden="true">#</a></h2>
+<ol>
+<li>Relay: <code>python relay_server.py 5000</code>, or let the controller start it with <code>neuropilot robo --launch-relay</code>.</li>
+<li>InVesalius (with the remote-control server).</li>
+<li><code>main_loop.py</code>.</li>
+<li>The controller: <code>neuropilot robo</code> (or <code>--launch-relay</code>, which also starts the relay).</li>
+</ol>
+<p>If the robot card is red with a connection message, check that <code>main_loop.py</code> is running and that the robot's Modbus/listen services are enabled. See <a href="../install/hardware.html">Hardware setup</a>.</p>
+<h2 id="training-order">Training order<a class="anchor" href="#training-order" aria-hidden="true">#</a></h2>
+<ol>
+<li>Relay: <code>python relay_server.py 5000</code>, or let the controller start it with <code>neuropilot training --launch-relay</code>.</li>
+<li>InVesalius (with the remote-control server).</li>
+<li><code>neuropilot training</code> (or <code>--launch-relay</code>, which also starts the relay).</li>
+</ol>
+<p>No robot driver and no EMG PC are needed. The stimulator card is the real device; the EMG card is the E-field-driven virtual EMG.</p>
+<div class="admonition tip"><p class="admonition-title"><span class="icon">💡</span>Force sensor</p><p><code>Awaiting valid pressure data</code> comes from the robot side when the force sensor has not produced a reading. Touch the sensor once; the stream starts.</p></div>
+<h2 id="simulation">Simulation<a class="anchor" href="#simulation" aria-hidden="true">#</a></h2>
+<p>In simulation all four cards go green immediately and the details show the virtual devices (the simulated stimulator model, the virtual EMG channels, the MuJoCo robot). A red card in simulation means a component failed to start — check the terminal for the component's log prefix.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="control.html">Control page</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../gui/project.html"><span>Previous</span>Project page</a>
+<a class="next" href="../gui/control.html"><span>Next</span>Control page</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-cards">The cards</a></li><li class="l2"><a href="#what-a-card-shows">What a card shows</a></li><li class="l3"><a href="#detail-rows-you-will-see">Detail rows you will see</a></li><li class="l2"><a href="#led-states">LED states</a></li><li class="l2"><a href="#the-start-gate">The Start gate</a></li><li class="l2"><a href="#recovery">Recovery</a></li><li class="l2"><a href="#real-mode-order">Real mode order</a></li><li class="l2"><a href="#training-order">Training order</a></li><li class="l2"><a href="#simulation">Simulation</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

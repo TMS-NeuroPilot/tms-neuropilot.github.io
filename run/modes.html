@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run modes · TMS NeuroPilot</title>
+<meta name="description" content="Simulation, real hardware and manual mode: what differs and when to use which.">
+<meta property="og:title" content="Run modes · TMS NeuroPilot">
+<meta property="og:description" content="Simulation, real hardware and manual mode: what differs and when to use which.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3">
+<li class="current"><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="run-modes">Run modes<a class="anchor" href="#run-modes" aria-hidden="true">#</a></h1>
+<p>TMS NeuroPilot has four run modes. They share the controller, the state machine, the relay protocol and the analysis; they differ only in who provides the robot, the neuronavigation, the stimulator and the EMG.</p>
+<p>Run <code>neuropilot</code> with no arguments to choose a mode in the selector, or start a mode directly with <code>neuropilot sim</code>, <code>neuropilot robo</code>, <code>neuropilot manual</code> or <code>neuropilot training</code>.</p>
+<figure>
+  <img src="../assets/diagrams/run-modes.svg?v=475a9995" alt="The four run modes and the processes each one starts.">
+  <figcaption>Simulation replaces all peers with TMS NeuroPilot's virtual twin.
+  Real mode uses the lab hardware. Manual mode keeps the hardware but removes
+  the robot. Training keeps real stimulation and navigation but replaces the
+  EMG with the virtual model and removes the robot.</figcaption>
+</figure>
+<h2 id="comparison">Comparison<a class="anchor" href="#comparison" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th></th>
+<th><code>sim</code></th>
+<th><code>robo</code></th>
+<th><code>manual</code></th>
+<th><code>training</code></th>
+</tr></thead><tbody>
+<tr><td>Command</td><td><code>neuropilot sim</code></td><td><code>neuropilot robo</code></td><td><code>neuropilot manual</code></td><td><code>neuropilot training</code></td></tr>
+<tr><td>Relay</td><td><code>sim_relay</code> (started)</td><td>production <code>relay_server.py</code></td><td>production <code>relay_server.py</code></td><td>production <code>relay_server.py</code></td></tr>
+<tr><td>Neuronavigation</td><td>virtual (<code>sim_nav</code>)</td><td>InVesalius + your tracker</td><td>InVesalius + your tracker</td><td>InVesalius + your tracker</td></tr>
+<tr><td>Robot</td><td>virtual MuJoCo (<code>sim_robot</code>)</td><td>your robot via <code>tms-robot-control</code></td><td><strong>none</strong>: operator moves the coil</td><td><strong>none</strong>: operator moves the coil</td></tr>
+<tr><td>Stimulator</td><td>virtual</td><td>your stimulator via <code>magicpy</code></td><td>your stimulator via <code>magicpy</code></td><td>your stimulator via <code>magicpy</code></td></tr>
+<tr><td>EMG</td><td>virtual</td><td>your EMG PC's share</td><td>your EMG PC's share</td><td>virtual, driven by the E-field</td></tr>
+<tr><td>Hardware needed</td><td>none</td><td>all of it</td><td>stimulator, EMG, tracking</td><td>stimulator, tracking</td></tr>
+<tr><td>E-field modes</td><td>both</td><td>both</td><td>both</td><td>both</td></tr>
+<tr><td>Typical use</td><td>development, demos</td><td>the experiment</td><td>quick tests, coil-handling studies</td><td>operator training with real pulses</td></tr>
+</tbody></table></div>
+<p>The hardware entries name the integration point, not a required device: the robot driver in <code>tms-robot-control</code>, the stimulator driver <code>magicpy</code>, and the SMB share of your EMG acquisition. Any device that speaks those interfaces works the same way.</p>
+<p><code>neuropilot robo</code>, <code>neuropilot manual</code> and <code>neuropilot training</code> start a local InVesalius automatically when a launcher is configured. <code>sim</code> uses the virtual neuronavigation and does not start InVesalius. The launcher settings and discovery are described in the <a href="../config/lab.html">lab profile reference</a>.</p>
+<h2 id="simulation">Simulation<a class="anchor" href="#simulation" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot sim</code></pre></div>
+<p>Starts relay → (nav ∥ robot) → controller, in that order, each after its readiness probe passes. Logs are prefixed by role in one terminal.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot sim --components relay,robot       # a subset, for debugging
+neuropilot controller --sim                   # controller only (peers already running)
+neuropilot relay                              # the simulated relay alone</code></pre></div>
+<p>In this mode the controller also shows a live MuJoCo view of the robot in the Control page, and the virtual EMG is generated from the E-field.</p>
+<p>Use it to:</p>
+<ul>
+<li>learn the GUI and the workflow without a subject,</li>
+<li>develop and test changes to the controller, the relay or the analysis,</li>
+<li>reproduce a bug from a real session (the same code paths run),</li>
+<li>demonstrate the system.</li>
+</ul>
+<h2 id="real">Real<a class="anchor" href="#real" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot robo</code></pre></div>
+<p>The controller connects to the relay and expects the other roles to be running. Start order on the lab PC:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python main_loop.py                          # 1. robot driver
+neuropilot robo                              # 2. controller + relay + InVesalius</code></pre></div>
+<p><code>neuropilot robo</code> starts the production relay automatically when <code>TMS_ROBOT_CONTROL_PATH</code> is configured and no relay is already running. If the path is missing, it asks for the <code>tms-robot-control</code> checkout and saves it. It then starts a local InVesalius after the relay is reachable. InVesalius uses the conda environment discovered from <code>CONDA_EXE</code>, or the values stored in <code>~/.neuropilot/lab.yaml</code>.</p>
+<p>If InVesalius is already running elsewhere, use the <strong>Is started</strong> button in the picker. TMS NeuroPilot then skips the local launch and expects that instance to connect to the same relay. <code>--no-invesalius</code> disables local startup as well.</p>
+<p><code>main_loop.py</code> is never started by TMS NeuroPilot. <code>--launch-relay</code> remains accepted for compatibility; a configured relay is now automatic.</p>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: real stimulation</p><p>Real mode fires a stimulator at a person. Do not start it without ethics approval, a trained operator, the stimulator's own limits and a consented subject. The checklist is in <a href="real.html">Real session checklist</a>.</p></div>
+<h2 id="manual">Manual<a class="anchor" href="#manual" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot manual</code></pre></div>
+<p>Everything of robo mode except the robot. The experimenter holds the coil; InVesalius tracks it and starts automatically by default; the controller waits for <em>Coil at target</em> exactly as it does with the robot. The robot card disappears from the Connections page and the Start gate no longer waits for a robot.</p>
+<p>Use it when the robot is unavailable, when the coil must be handled by a person, or to isolate a robot problem from the rest of the pipeline.</p>
+<h2 id="training">Training<a class="anchor" href="#training" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot training</code></pre></div>
+<p>Real stimulator and real InVesalius, but a virtual EMG. The operator holds the coil, InVesalius tracks it, the controller waits for <em>Coil at target</em>, and the stimulator fires. The MEP trace is generated from the E-field at the configured channel sources instead of being recorded.</p>
+<p>Start the controller; it starts the production relay when configured and then InVesalius:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot training</code></pre></div>
+<p>Use <code>--no-invesalius</code> if you want to start InVesalius yourself, or choose <strong>Is started</strong> when it runs on another machine. No robot driver and no EMG PC are needed. <code>--launch-relay</code> remains accepted for compatibility, but a configured relay is started automatically.</p>
+<p>The channel sources are project data. The <a href="../gui/config.html">Config › Simulation</a> page shows the configured channel names and the sources file; edit the mapping in the Project tab. The precomputed E-field mode uses the library row for the target. The online mode uses the field computed from the realised coil pose, as in a real experiment.</p>
+<p>Use training with the printable Ernie head or any other phantom. The <a href="../start/use-cases.html">Use cases</a> page covers the phantom, registration and stimulator caveats.</p>
+<h2 id="choosing-without-arguments">Choosing without arguments<a class="anchor" href="#choosing-without-arguments" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot</code></pre></div>
+<p>opens the mode selector. The chosen mode is what the controller starts in; it is a launcher, not a setting. For robo, manual and training, the selector also checks the relay and prompts for the <code>tms-robot-control</code> path if needed. The InVesalius picker offers <strong>Select environment</strong>, <strong>Is started</strong> for an external instance, and <strong>Cancel</strong>.</p>
+<figure>
+  <img src="../assets/screenshots/mode-selector.png?v=475a9995" alt="The TMS NeuroPilot mode selector with Simulation, Robotic TMS, Manual TMS and Training buttons.">
+  <figcaption>Running <code>neuropilot</code> with no arguments opens the
+  TMS NeuroPilot mode dialog. Robotic TMS, Manual TMS and Training modes start
+  InVesalius automatically by default.</figcaption>
+</figure>
+<h2 id="what-is-identical">What is identical<a class="anchor" href="#what-is-identical" aria-hidden="true">#</a></h2>
+<ul>
+<li>the six GUI pages and every control,</li>
+<li>the relay topics and payloads (byte-identical to the production components),</li>
+<li>the mapping loop,</li>
+<li>the E-field modes, the regression and the exports,</li>
+<li>the results CSV columns (robot-only fields are empty in manual and training).</li>
+</ul>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="simulated.html">A simulated session</a></li>
+<li><a href="real.html">Real session checklist</a></li>
+<li><a href="manual.html">Manual mode</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../prepare/study.html"><span>Previous</span>Study profiles</a>
+<a class="next" href="../run/simulated.html"><span>Next</span>A simulated session</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#comparison">Comparison</a></li><li class="l2"><a href="#simulation">Simulation</a></li><li class="l2"><a href="#real">Real</a></li><li class="l2"><a href="#manual">Manual</a></li><li class="l2"><a href="#training">Training</a></li><li class="l2"><a href="#choosing-without-arguments">Choosing without arguments</a></li><li class="l2"><a href="#what-is-identical">What is identical</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting · TMS NeuroPilot</title>
+<meta name="description" content="Symptom → cause → fix for the failures seen in practice.">
+<meta property="og:title" content="Troubleshooting · TMS NeuroPilot">
+<meta property="og:description" content="Symptom → cause → fix for the failures seen in practice.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8">
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li class="current"><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="troubleshooting">Troubleshooting<a class="anchor" href="#troubleshooting" aria-hidden="true">#</a></h1>
+<p>Symptom-first. Each row names the most likely cause and the fix, and links the page that explains it.</p>
+<h2 id="install-and-start">Install and start<a class="anchor" href="#install-and-start" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr></thead><tbody>
+<tr><td><code>neuropilot: command not found</code></td><td>editable install missing in the active env</td><td><code>pip install -e . --no-deps</code></td></tr>
+<tr><td><code>ModuleNotFoundError: PyQt5</code> / <code>pynibs</code> / <code>mujoco</code></td><td>wrong interpreter</td><td><code>conda activate neuropilot</code>; check <code>which python</code></td></tr>
+<tr><td><code>TypeError</code> on a missing MEP key at import</td><td><code>.env</code> missing and an old checkout</td><td><code>cp .env.example .env</code> (current code has defaults; update if needed)</td></tr>
+<tr><td>import crashes on <code>ROOT_FOLDER</code></td><td><code>.env</code> points at the cluster path</td><td><code>ROOT_FOLDER=/tmp/neuropilot_test neuropilot sim</code></td></tr>
+<tr><td><code>Address already in use</code> on 5000</td><td>another relay or service</td><td>stop it, or set <code>RELAY_PORT</code></td></tr>
+<tr><td><code>Cannot connect to the stimulator ... Permission denied</code></td><td>user not in <code>dialout</code></td><td><code>sudo usermod -aG dialout $USER</code>; log out/in, or <code>newgrp dialout</code></td></tr>
+<tr><td><code>Cannot open the TTL/parallel port</code></td><td>no <code>/dev/parport0</code>, or no permission</td><td>serial-only fallback is normal; for TTL run <code>sudo modprobe ppdev</code> and check the <code>lp</code> group</td></tr>
+<tr><td>window never appears</td><td>no <code>DISPLAY</code>/<code>WAYLAND_DISPLAY</code></td><td>run on a graphical session, or use <code>pytest -m &quot;not gui&quot;</code></td></tr>
+<tr><td>MuJoCo viewer fails on Wayland</td><td>GLFW is X11-only</td><td>set <code>PYGLFW_LIBRARY</code> to the X11 <code>libglfw.so.3</code></td></tr>
+</tbody></table></div>
+<h2 id="simulator">Simulator<a class="anchor" href="#simulator" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr></thead><tbody>
+<tr><td>one component dies at start</td><td>traceback in its prefixed log</td><td>read the last lines; the supervisor stops the stack</td></tr>
+<tr><td><code>component died: [(&#x27;robot&#x27;, 1)]</code></td><td>robot model/asset problem</td><td><code>python -m neuropilot.sim_robot.robots --check &lt;robot-key&gt;</code></td></tr>
+<tr><td>controller starts but nothing connects</td><td>relay not up or wrong port</td><td>check <code>[relay]</code> line and <code>RELAY_PORT</code></td></tr>
+<tr><td><code>WARNING: nav not ready after 60s</code></td><td>slow import or crash</td><td>check the <code>[nav]</code> log; raise <code>READINESS_TIMEOUT_S</code></td></tr>
+<tr><td>simulated robot does not move</td><td>target outside reach or IK failed</td><td>watch the log; check the placement</td></tr>
+</tbody></table></div>
+<h2 id="connections">Connections<a class="anchor" href="#connections" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr></thead><tbody>
+<tr><td>a card stays grey</td><td>no health packet yet</td><td>wait 1 s, press <strong>Reconnect</strong></td></tr>
+<tr><td>stimulator red, <code>No Connection</code></td><td>wrong serial port or unplugged</td><td>check <code>STIMULATOR_PORT</code>, permissions (<code>dialout</code>)</td></tr>
+<tr><td>EMG red, <code>Could not connect to IP</code></td><td>share or credentials</td><td>test with <code>smbclient</code>, check <code>EMG_COMPUTER_*</code></td></tr>
+<tr><td>robot red</td><td><code>main_loop.py</code> not running, or Modbus/listen disabled</td><td>start the robot driver; enable both services</td></tr>
+<tr><td>robot spams <code>Awaiting valid pressure data</code></td><td>force sensor has no reading</td><td>touch the sensor once</td></tr>
+<tr><td><strong>Reconnect</strong> disabled</td><td>no software recovery for this error</td><td>fix the hardware; the message names the failure</td></tr>
+</tbody></table></div>
+<h2 id="session">Session<a class="anchor" href="#session" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr></thead><tbody>
+<tr><td><strong>Start</strong> grey</td><td>no E-field mode, missing library, or a system not ready</td><td>read the hint under the E-field radios</td></tr>
+<tr><td><strong>Start</strong> grey while a file row says <code>loading...</code></td><td>a large project file is still being read</td><td>wait for the row to show its summary; the window remains usable</td></tr>
+<tr><td><code>Online solver unavailable</code></td><td>SimNIBS/petsc4py not importable</td><td>check <code>import simnibs</code>, then the MKL note in install</td></tr>
+<tr><td>pulses are held in online mode</td><td>solver warming up</td><td>wait for <code>Online solver ready.</code></td></tr>
+<tr><td><code>Held at …: … not ready</code></td><td>a system dropped mid-run</td><td>fix it, <strong>Reconnect</strong>; the loop continues</td></tr>
+<tr><td><code>Previous ignored: a pulse is in flight.</code></td><td><strong>Back</strong> pressed during fire/collect</td><td>expected; wait for the next target</td></tr>
+<tr><td><code>No realized target after 20 s -- pulse skipped.</code></td><td>neuronavigation did not report the pose</td><td>check tracking; raise <code>COLLECT_TIMEOUT_S</code> if the system is slow</td></tr>
+<tr><td>coil never reaches the target</td><td>out of reach, collision, tracking</td><td><strong>Next</strong>, check the placement and the robot state</td></tr>
+<tr><td>pulses fire but no MEP</td><td>amplifier, window, or stimulator</td><td>check the EMG trace and the MEP page</td></tr>
+<tr><td>map empty after many pulses</td><td>no ROI, no library, or &lt; 3 finite MEPs</td><td>check the ROI row and the log warnings</td></tr>
+</tbody></table></div>
+<h2 id="data-and-files">Data and files<a class="anchor" href="#data-and-files" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr></thead><tbody>
+<tr><td><code>references target N, but only M placements exist</code></td><td>order file from another subject or 1-based</td><td>regenerate with the matching placements</td></tr>
+<tr><td><code>E_mag must be (placements, elements)</code></td><td>transposed or wrong dataset</td><td>check the shape with <code>h5py</code></td></tr>
+<tr><td><code>different coil placements</code> warning</td><td>sorted placements + unsorted library</td><td>re-sort the library or reload the matching pair</td></tr>
+<tr><td><code>expected a mapping of settings</code></td><td>project is a list/empty/binary</td><td>fix the YAML</td></tr>
+<tr><td>export fails "folder deleted"</td><td>target folder removed</td><td>choose an existing folder</td></tr>
+<tr><td>results CSV missing</td><td>folder not writable, or <code>Finish</code> never reached</td><td>check <code>results_fn</code> and the log</td></tr>
+</tbody></table></div>
+<h2 id="values-that-do-not-stick">Values that do not stick<a class="anchor" href="#values-that-do-not-stick" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr></thead><tbody>
+<tr><td>a Lab value reverts after restart</td><td>the same key is in <code>.env</code></td><td>the status line counts them; edit <code>.env</code></td></tr>
+<tr><td>MEP windows changed in the GUI do nothing</td><td>they are read at import</td><td>restart the controller</td></tr>
+<tr><td>theme changes but reverts next start</td><td><code>UI_THEME</code> pinned in <code>.env</code></td><td>edit <code>.env</code> or remove the line</td></tr>
+<tr><td>study <strong>Apply to session</strong> refuses</td><td>a mapping is running</td><td>finish it first</td></tr>
+<tr><td><code>lab profile ignored (expected a mapping)</code></td><td>malformed YAML</td><td>fix or delete the file</td></tr>
+</tbody></table></div>
+<h2 id="log-colors">Log colors<a class="anchor" href="#log-colors" aria-hidden="true">#</a></h2>
+<p>The supervisor colors only the role label inside square brackets, for example <code>[controller]</code>, <code>[invesalius]</code> and <code>[relay]</code>. Set <code>NO_COLOR</code> to disable this, or <code>FORCE_COLOR=1</code> to keep the colors when output is redirected to a file. Repeated simulated-relay forwarding lines are coalesced; on a terminal the latest line is updated in place, while redirected output emits one summary when the burst ends.</p>
+<h2 id="tests-and-ci">Tests and CI<a class="anchor" href="#tests-and-ci" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr></thead><tbody>
+<tr><td><code>pytest: command not found</code></td><td>pytest not in the env</td><td><code>conda activate neuropilot</code> / <code>pip install pytest</code></td></tr>
+<tr><td>GUI tests skipped</td><td>no display</td><td>run with <code>DISPLAY</code>/<code>WAYLAND_DISPLAY</code>, or use <code>-m &quot;not gui&quot;</code></td></tr>
+<tr><td>snapshot drift after a design change</td><td>baselines outdated</td><td><code>UPDATE_GUI_BASELINES=1 pytest tests/test_gui_snapshots.py</code></td></tr>
+<tr><td>CI: <code>pytest is not installed in …</code></td><td>runner lacks the env</td><td>set <code>PYTHON</code> to the neuropilot interpreter</td></tr>
+<tr><td>CI: <code>pages</code> fails on a link</td><td>a page references a missing asset</td><td>run <code>python docs/site/build.py --check</code> locally</td></tr>
+<tr><td>CI: <code>pages</code> fails on an orphan</td><td>a page is not in <code>nav.toml</code></td><td>add it or delete it</td></tr>
+</tbody></table></div>
+<h2 id="what-to-collect-before-asking">What to collect before asking<a class="anchor" href="#what-to-collect-before-asking" aria-hidden="true">#</a></h2>
+<ol>
+<li>The terminal log with role prefixes (<code>[relay]</code>, <code>[nav]</code>, <code>[robot]</code>, <code>[controller]</code>), from the start of the run.</li>
+<li>The step where it failed and the last 20 lines of the Control log.</li>
+<li><code>python -m neuropilot.sim_robot.robots --check &lt;key&gt;</code> output.</li>
+<li><code>pytest -m &quot;not gui&quot; -q</code> tail, if the problem is reproducible without hardware.</li>
+<li>The project YAML (redact paths if needed) and the E-field shapes: <code>E_mag.shape</code>, ROI triangles, placements.</li>
+</ol>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="architecture.html">Architecture</a> — when the symptom needs a mental model.</li>
+<li><a href="relay.html">Relay protocol</a> — when messages are not arriving.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../reference/testing.html"><span>Previous</span>Testing and CI</a>
+<a class="next" href="../reference/glossary.html"><span>Next</span>Glossary</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#install-and-start">Install and start</a></li><li class="l2"><a href="#simulator">Simulator</a></li><li class="l2"><a href="#connections">Connections</a></li><li class="l2"><a href="#session">Session</a></li><li class="l2"><a href="#data-and-files">Data and files</a></li><li class="l2"><a href="#values-that-do-not-stick">Values that do not stick</a></li><li class="l2"><a href="#log-colors">Log colors</a></li><li class="l2"><a href="#tests-and-ci">Tests and CI</a></li><li class="l2"><a href="#what-to-collect-before-asking">What to collect before asking</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

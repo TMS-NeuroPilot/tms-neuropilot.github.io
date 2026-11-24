@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-field modes · TMS NeuroPilot</title>
+<meta name="description" content="Precomputed versus online FEM, and switching mid-run without losing alignment.">
+<meta property="og:title" content="E-field modes · TMS NeuroPilot">
+<meta property="og:description" content="Precomputed versus online FEM, and switching mid-run without losing alignment.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3">
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li class="current"><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="e-field-modes">E-field modes<a class="anchor" href="#e-field-modes" aria-hidden="true">#</a></h1>
+<p>Every pulse needs an E-field. TMS NeuroPilot can draw it from three sources, and the mode can change during a session without breaking the regression. The third source — a surrogate interpolator (<a href="https://doi.org/10.1016/j.brs.2025.102990" class="external" target="_blank" rel="noopener">Grosshagauer et al., 2025</a>) — is described at the end of this page.</p>
+<figure>
+  <img src="../assets/diagrams/efield-modes.svg?v=475a9995" alt="The precomputed, online and interpolated E-field paths, all ending in one per-pulse row appended to the regression.">
+  <figcaption>Three sources, one row format. The mode decides where the row comes
+  from; the analysis does not care.</figcaption>
+</figure>
+<h2 id="precomputed">Precomputed<a class="anchor" href="#precomputed" aria-hidden="true">#</a></h2>
+<p>The field for every placement was solved before the session (<a href="../prepare/efield-library.html">E-field library</a>). At pulse time the controller looks up the row of the <em>planned</em> placement:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">e_matrix[target_index]  →  one row of E_mag  →  regression</code></pre></div>
+<ul>
+<li>Ready immediately.</li>
+<li>Requires <code>e_field_path</code> and <code>targets_file</code> in the project.</li>
+<li>The coil must actually be at the planned placement for the row to be true; the controller flags a large aim error in the log and in the export.</li>
+<li>The CSV records <code>e_field_mode = precomputed</code> for those pulses.</li>
+</ul>
+<h2 id="online">Online<a class="anchor" href="#online" aria-hidden="true">#</a></h2>
+<p>The field is solved for the realised coil pose while the session runs, using SimNIBS through <code>OnlineFEMManager</code>:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">realised pose  →  OnlineFEMManager  →  one field vector  →  regression</code></pre></div>
+<ul>
+<li>The solver loads once at the start: about <strong>one minute</strong>.</li>
+<li>Needs the <code>.msh</code> head mesh, the ROI surface and the coil model.</li>
+<li>Does <strong>not</strong> need the E-field library or the placements library, though a target-order file still helps.</li>
+<li>Solver settings come from <strong>Config › Lab › E-field solver</strong>:</li>
+</ul>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Setting</th>
+<th>Values</th>
+<th>Default</th>
+</tr></thead><tbody>
+<tr><td>Solver</td><td><code>pardiso</code> (fast) or <code>amg</code> (robust, slower)</td><td><code>pardiso</code></td></tr>
+<tr><td>Anisotropy</td><td><code>scalar</code> or <code>vector</code> (needs a DTI tensor in the mesh)</td><td><code>scalar</code></td></tr>
+</tbody></table></div>
+<ul>
+<li>The CSV records <code>e_field_mode = online</code> for those pulses.</li>
+</ul>
+<h2 id="interpolated">Interpolated<a class="anchor" href="#interpolated" aria-hidden="true">#</a></h2>
+<p>The third source interpolates the field instead of solving it. The method — an a-priori simulation of the pose range around the target, then SE(3) interpolation of the field for the realised coil pose — was introduced by <a href="https://doi.org/10.1016/j.brs.2025.102990" class="external" target="_blank" rel="noopener">Grosshagauer et al., 2025</a>, with code in the <a href="https://github.com/fMRIat/EfieldInterpolation" class="external" target="_blank" rel="noopener">EfieldInterpolation</a> repository (Michael Woletz and Sarah Grosshagauer). Interpolation answers in a fraction of a millisecond per pulse; the a-priori simulation is the dense-library run described in <a href="../prepare/efield-library.html">E-field library</a>.</p>
+<p>The mode is the <strong>Interpolated</strong> radio on the Project page. It needs:</p>
+<ul>
+<li>the dense library (<code>surrogate_library_path</code> in the project), and</li>
+<li>the ROI surface (<code>mesh_RIO_path</code>) — the library is verified against it before use: the generator stores an <code>roi_hash</code> over the ROI centroid sequence, and a mismatch means the field columns would not match the map.</li>
+</ul>
+<p>The library loads in the background (a few seconds); pulses are held until it is ready. At pulse time <code>SurrogateManager</code> scales the library field (generated at 1 A/µs) by the applied amplitude — the same one-row-per-pulse contract as the other sources, so modes can be mixed within a session.</p>
+<p>The outside policy is <strong>skip and exclude</strong>: a pose outside the trained grid is recorded with an all-NaN field row, so the pulse indices stay aligned, and the regression drops it exactly like a pulse without a field. The log says so once per excursion. There is no interpolation outside the domain, and no fallback to the online solver. The CSV records <code>e_field_mode = surrogate</code> for these pulses.</p>
+<p>TMS NeuroPilot implements the estimator independently of that repository (<code>EFieldSurrogate</code>). <code>scripts/03_validate_efield_surrogate.py</code> measures the accuracy on held-out placements, <code>scripts/04_export_efield_vtk_series.py</code> writes FEM-versus-surrogate time series for ParaView. On the ernie phantom (20 mm / 4 mm library) a new position is reproduced to ~1.5 % field error and ~5° direction error.</p>
+<h2 id="changing-the-stimulator-output-between-pulses">Changing the stimulator output between pulses<a class="anchor" href="#changing-the-stimulator-output-between-pulses" aria-hidden="true">#</a></h2>
+<p>The MSO slider is not locked during a session. The controller snapshots the value when the pulse fires (<code>stimulator_amplitude_at_stim</code>) and all three sources use that snapshot:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Source</th>
+<th>Scaling at pulse time</th>
+</tr></thead><tbody>
+<tr><td>Precomputed</td><td><code>e_matrix[target] * amplitude * 1.4</code></td></tr>
+<tr><td>Online</td><td><code>dI/dt = amplitude * 1.4 * 1e6</code> A/s before the FEM solve</td></tr>
+<tr><td>Interpolated</td><td>unit library field <code>* amplitude * 1.4</code></td></tr>
+</tbody></table></div>
+<p>The scaled row is stored with the pulse. Moving the slider after the pulse does not change that row, and the next pulse uses the new value. The results CSV <code>intensity</code> column is the same snapshot, so a row can always be traced back to the MSO that produced its MEP.</p>
+<h2 id="the-hint-under-the-radios">The hint under the radios<a class="anchor" href="#the-hint-under-the-radios" aria-hidden="true">#</a></h2>
+<p>The one line below the E-field buttons is the mode's state machine:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Text</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><code>Choose a mode to enable Start.</code></td><td>no mode selected; Start is disabled</td></tr>
+<tr><td><code>Precomputed library — ready immediately.</code></td><td>precomputed mode with a library loaded</td></tr>
+<tr><td><code>Warming up the online solver; pulses wait until it is ready.</code></td><td>online mode, solver loading</td></tr>
+<tr><td><code>Online solver ready.</code></td><td>online mode, solving per pulse</td></tr>
+<tr><td><code>Online solver unavailable — switch to Precomputed.</code></td><td>SimNIBS/petsc4py not importable</td></tr>
+<tr><td><code>Loading the interpolated E-field library (a few seconds) — pulses wait until it is ready.</code></td><td>interpolated mode, library loading</td></tr>
+<tr><td><code>Interpolated library ready (897 placements, guard 4.0 mm / 15°).</code></td><td>interpolated mode ready</td></tr>
+<tr><td><code>Interpolated library unavailable — check the library and ROI paths / the log.</code></td><td>the load failed (missing file, ROI mismatch)</td></tr>
+</tbody></table></div>
+<h2 id="switching-mid-run">Switching mid-run<a class="anchor" href="#switching-mid-run" aria-hidden="true">#</a></h2>
+<p>The mode is not locked during a session. Every pulse stores the field it was stimulated with, so switching only affects the following pulses:</p>
+<ol>
+<li>The regression matrix is assembled from the per-pulse rows (<code>pulse_e_fields</code>), not from the library directly.</li>
+<li>A pulse with a missing field is dropped, and the MEP history is re-indexed with it, so the remaining rows stay aligned.</li>
+<li>The export records the source per pulse (<code>e_field_mode</code>), which makes a mixed session auditable.</li>
+</ol>
+<p>What happens on a switch:</p>
+<ul>
+<li><strong>Precomputed → Online:</strong> the solver starts loading. The coil stays on target and the pulse is <strong>held</strong> until the solver is ready; the log says <code>Online solver ready, stimulation resumes.</code> Switching back releases the pulse immediately.</li>
+<li><strong>Precomputed/Online → Interpolated:</strong> the library starts loading (a few seconds); pulses are held the same way. A pose outside the trained grid is not held — it is recorded without a field and left out of the map.</li>
+<li><strong>Online/Interpolated → Precomputed:</strong> immediate; no solver state is needed.</li>
+</ul>
+<div class="admonition warning"><p class="admonition-title"><span class="icon">⚠</span>Warm the solver before the subject is positioned</p><p>The first switch to online costs about a minute during which no pulse can fire. Do it during setup, not between two targets with the coil on the head.</p></div>
+<h2 id="which-mode-to-use">Which mode to use<a class="anchor" href="#which-mode-to-use" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Situation</th>
+<th>Recommendation</th>
+</tr></thead><tbody>
+<tr><td>Library exists and the coil reliably reaches the planned pose</td><td>precomputed</td></tr>
+<tr><td>No library yet, or the head moved since it was computed</td><td>online</td></tr>
+<tr><td>Many pulses, session time is tight</td><td>precomputed</td></tr>
+<tr><td>Dense library exists and the pose stays inside the trained grid</td><td>interpolated</td></tr>
+<tr><td>The interesting question is the field of the <em>realised</em> pose</td><td>online</td></tr>
+<tr><td>Debugging the stimulator/EMG only</td><td>either; precomputed is faster to start</td></tr>
+</tbody></table></div>
+<h2 id="what-the-analysis-sees">What the analysis sees<a class="anchor" href="#what-the-analysis-sees" aria-hidden="true">#</a></h2>
+<p>Both modes produce the same structure:</p>
+<div class="code"><div class="code-head"><span>python</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-python">pulse_e_fields = [row_0, row_1, row_2, ...]   # one vector per pulse
+pulse_modes    = [&quot;precomputed&quot;, &quot;online&quot;, &quot;surrogate&quot;, ...]</code></pre></div>
+<p><code>assemble_analysis_matrix()</code> drops the <code>None</code> rows and returns the indices it kept, which is why an aborted pulse never shifts the MEP history.</p>
+<h2 id="the-project-file-remembers">The project file remembers<a class="anchor" href="#the-project-file-remembers" aria-hidden="true">#</a></h2>
+<p><code>efield_mode</code> is written into the project YAML, so a subject resumed later opens in the same mode. It is one of the few live controls that travel with the subject; the amplitude and repetitions do too.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="mapping-loop.html">The mapping loop</a></li>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../run/manual.html"><span>Previous</span>Manual mode</a>
+<a class="next" href="../run/mapping-loop.html"><span>Next</span>The mapping loop</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#precomputed">Precomputed</a></li><li class="l2"><a href="#online">Online</a></li><li class="l2"><a href="#interpolated">Interpolated</a></li><li class="l2"><a href="#changing-the-stimulator-output-between-pulses">Changing the stimulator output between pulses</a></li><li class="l2"><a href="#the-hint-under-the-radios">The hint under the radios</a></li><li class="l2"><a href="#switching-mid-run">Switching mid run</a></li><li class="l2"><a href="#which-mode-to-use">Which mode to use</a></li><li class="l2"><a href="#what-the-analysis-sees">What the analysis sees</a></li><li class="l2"><a href="#the-project-file-remembers">The project file remembers</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

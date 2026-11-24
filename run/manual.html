@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual mode · TMS NeuroPilot</title>
+<meta name="description" content="Hardware without the robot: the experimenter positions the coil.">
+<meta property="og:title" content="Manual mode · TMS NeuroPilot">
+<meta property="og:description" content="Hardware without the robot: the experimenter positions the coil.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3">
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li class="current"><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="manual-mode">Manual mode<a class="anchor" href="#manual-mode" aria-hidden="true">#</a></h1>
+<p>Manual mode runs the real pipeline without the robot: a person holds the coil, the neuronavigation tracks it, and the controller waits for <em>Coil at target</em> exactly as it does with the robot.</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">neuropilot manual</code></pre></div>
+<p>or <code>neuropilot controller --manual</code> when the relay, InVesalius and the stimulator are already running.</p>
+<h2 id="what-changes">What changes<a class="anchor" href="#what-changes" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th></th>
+<th>Real mode</th>
+<th>Manual mode</th>
+</tr></thead><tbody>
+<tr><td>Robot process</td><td>required</td><td>not started</td></tr>
+<tr><td>Robot card on Connections</td><td>present</td><td><strong>absent</strong></td></tr>
+<tr><td>Start gate</td><td>waits for the robot</td><td>ignores the robot</td></tr>
+<tr><td>Coil positioning</td><td>robot</td><td>the operator</td></tr>
+<tr><td>Pressure signal</td><td>force sensor</td><td>not used</td></tr>
+<tr><td>Coil pose</td><td>robot forward kinematics</td><td>tracked coil from the neuronavigation</td></tr>
+<tr><td>Everything else</td><td>identical</td><td>identical</td></tr>
+</tbody></table></div>
+<p>The controller sets <code>manual = True</code>, which:</p>
+<ul>
+<li>skips <code>Press robot button</code> messages,</li>
+<li>skips the force-threshold check in <code>WAIT_FOR_TARGET_REACHED</code>,</li>
+<li>keeps the minimum-interval and coil-at-target gates,</li>
+<li>takes the realised pose and the aim error from the <strong>tracked coil</strong> instead of the robot's forward kinematics; the pose columns are filled as usual, the pressure column is not.</li>
+</ul>
+<h2 id="the-workflow">The workflow<a class="anchor" href="#the-workflow" aria-hidden="true">#</a></h2>
+<ol>
+<li>Make the relay and InVesalius available as in robo mode; <code>neuropilot manual</code> starts them automatically when configured.</li>
+<li>Start the controller: <code>neuropilot manual</code>.</li>
+<li>Load the project.</li>
+<li>On <strong>Control</strong>, choose an E-field mode. Both work; precomputed still needs the library and the placements.</li>
+<li>Press <strong>Start</strong>. The controller creates the first marker.</li>
+<li>Move the coil until the neuronavigation reports <em>Coil at target</em>.</li>
+<li>The controller fires when the interval has elapsed.</li>
+</ol>
+<p>The sequence then repeats for the next target. With a precomputed library the coil must be at the planned pose, because the field row belongs to that placement; the operator's job is to reach it within tolerance.</p>
+<div class="admonition tip"><p class="admonition-title"><span class="icon">💡</span>Manual mode is the fastest way to test the pipeline</p><p>It removes the robot from the loop while keeping the real stimulator, EMG, tracking and analysis. If a problem disappears in manual mode, it is in the robot or its driver — not in the controller.</p></div>
+<h2 id="caveats">Caveats<a class="anchor" href="#caveats" aria-hidden="true">#</a></h2>
+<ul>
+<li><strong>Target tolerance matters more.</strong> A hand-held coil drifts; a pulse whose realised pose is far from the planned one is flagged (<code>coil was N mm from the planned placement</code>) and, with a precomputed library, the field used is the planned one, not the delivered one. Check the aim-error column in the export.</li>
+<li><strong>No force feedback.</strong> The pressure column is empty and the operator decides the contact.</li>
+<li><strong>No free-drive / objective messages.</strong> The <code>Enable free drive</code> button on the Control page has no effect in manual mode.</li>
+<li><strong>The robot view is empty.</strong> There is no simulated robot in robo modes; the Control page shows no 3-D arm.</li>
+</ul>
+<h2 id="when-to-use-it">When to use it<a class="anchor" href="#when-to-use-it" aria-hidden="true">#</a></h2>
+<ul>
+<li>Commissioning the stimulator, EMG or tracking without the robot.</li>
+<li>A protocol that requires hand-held stimulation.</li>
+<li>Isolating a fault: if the session runs in manual mode, the controller, relay, InVesalius and stimulator are fine.</li>
+</ul>
+<div class="admonition note"><p class="admonition-title"><span class="icon">ℹ</span>Training</p><p>Training mode is manual positioning with a real stimulator and a virtual EMG. See <a href="modes.html">Run modes</a> and <a href="../start/use-cases.html">Use cases</a>.</p></div>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="efield-modes.html">E-field modes</a></li>
+<li><a href="mapping-loop.html">The mapping loop</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../run/collision-test.html"><span>Previous</span>Collision test</a>
+<a class="next" href="../run/efield-modes.html"><span>Next</span>E-field modes</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#what-changes">What changes</a></li><li class="l2"><a href="#the-workflow">The workflow</a></li><li class="l2"><a href="#caveats">Caveats</a></li><li class="l2"><a href="#when-to-use-it">When to use it</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

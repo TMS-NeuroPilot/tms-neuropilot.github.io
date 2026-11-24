@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="TMS NeuroPilot (light)">
+  <rect width="512" height="512" rx="112" fill="#FFFFFF"/>
+  <rect x="140" y="108" width="58" height="296" rx="4" fill="#14181F"/>
+  <rect x="307" y="108" width="58" height="296" rx="4" fill="#14181F"/>
+  <path d="M 169 137.0 L 195 137.0 C 285 137.0 208 312 352 398" fill="none" stroke="#14181F" stroke-width="58"/>
+  <circle cx="140.0" cy="108" r="32" fill="#B45309"/>
+  <circle cx="352" cy="398" r="32" fill="#B45309"/>
+  <path d="M 327.38 340.01 A 63 63 0 0 1 398.08 440.97" fill="none" stroke="#B45309" stroke-width="11" stroke-linecap="round"/>
+  <path d="M 376.62 455.99 A 63 63 0 0 1 305.92 355.03" fill="none" stroke="#B45309" stroke-width="11" stroke-linecap="round"/>
+</svg>

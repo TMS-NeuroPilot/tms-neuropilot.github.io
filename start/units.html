@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Units and frames · TMS NeuroPilot</title>
+<meta name="description" content="Millimetres, degrees, head space, robot base and the coil-handle convention.">
+<meta property="og:title" content="Units and frames · TMS NeuroPilot">
+<meta property="og:description" content="Millimetres, degrees, head space, robot base and the coil-handle convention.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section active" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0">
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li class="current"><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="units-and-frames">Units and frames<a class="anchor" href="#units-and-frames" aria-hidden="true">#</a></h1>
+<p>Most "the robot went to the wrong place" reports are a units or frame mistake, not a robot fault. This page states the conventions once, so the rest of the site can refer to them.</p>
+<h2 id="the-two-unit-systems">The two unit systems<a class="anchor" href="#the-two-unit-systems" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Context</th>
+<th>Length</th>
+<th>Rotation</th>
+<th>Where</th>
+</tr></thead><tbody>
+<tr><td>Relay messages</td><td>millimetres</td><td>degrees, intrinsic XYZ Euler (<code>sxyz</code>)</td><td>every <code>position</code> / <code>orientation</code> field</td></tr>
+<tr><td>MuJoCo scene</td><td>metres</td><td>radians</td><td><code>sim_robot</code> internals, MJCF assets</td></tr>
+<tr><td>SimNIBS files</td><td>millimetres</td><td>degrees (matrix)</td><td><code>m2m_*</code>, ROI HDF5, placements, E-field library</td></tr>
+<tr><td>URDF</td><td>metres (file may differ; ikpy converts)</td><td>radians</td><td><code>sim_robot/assets/urdf/</code></td></tr>
+<tr><td>Coil model <code>.ccd</code></td><td>millimetres</td><td>its own frame</td><td>SimNIBS coil library</td></tr>
+</tbody></table></div>
+<p>The conversion points are few and deliberate:</p>
+<ul>
+<li><code>controller/pipeline_controller.py</code> converts a <code>matsimnibs</code> 4×4 matrix to <code>(position_mm, euler_deg)</code> with <code>transformations.euler_from_matrix(m, &quot;sxyz&quot;)</code> before anything is sent.</li>
+<li><code>sim_robot</code> converts mm/degrees at its relay boundary and works in SI inside.</li>
+<li>The 3-D viewer converts nothing: it reads the same SimNIBS-space mesh the analysis uses, so mesh, placements and E-field columns share one frame.</li>
+</ul>
+<h2 id="the-frames">The frames<a class="anchor" href="#the-frames" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">SimNIBS head space  ── registration ──►  neuronavigation space
+        │                                        │
+        │ (targets, mesh, E-field columns)       │ (tracked coil, markers)
+        ▼                                        ▼
+   project files                          robot base frame
+        │                                        │
+        └────────────► analysis ◄────────────────┘
+                        (realised poses, per pulse)</code></pre></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Frame</th>
+<th>Origin and axes</th>
+<th>Used by</th>
+</tr></thead><tbody>
+<tr><td><strong>SimNIBS head space</strong></td><td>the subject's T1, NIfTI convention (x right, y posterior, z superior), mm</td><td>mesh, ROI, placements, E-field, exported coordinates</td></tr>
+<tr><td><strong>Neuronavigation space</strong></td><td>InVesalius' patient space after registration</td><td>markers, tracked coil, "coil at target"</td></tr>
+<tr><td><strong>Robot base frame</strong></td><td>the robot's own base, metres</td><td>motion planning in <code>tms-robot-control</code></td></tr>
+<tr><td><strong>Coil local frame</strong></td><td>origin at the stimulation point, handle along <strong>−y</strong></td><td>coil model, tool chain, IK target</td></tr>
+</tbody></table></div>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: the tool point is the stimulation point</p><p>The robot's tool centre point (its end-effector site — <code>coil_tcp_site</code> in the shipped model) is the coil's stimulation point, not the flange and not the handle. If you change the coil mount, re-measure the tool point before the next real session. A tool-point error moves the focus by exactly that error.</p></div>
+<h2 id="the-coil-handle-convention">The coil-handle convention<a class="anchor" href="#the-coil-handle-convention" aria-hidden="true">#</a></h2>
+<p>The coil's local <strong>−y</strong> axis points along the handle, away from the head. The robot's IK orients the coil with that convention; the 3-D viewer draws the handle segment using the same axis. A coil whose handle is drawn in the wrong direction is usually a transpose in an orientation matrix, not a modelling error.</p>
+<h2 id="reading-a-target">Reading a target<a class="anchor" href="#reading-a-target" aria-hidden="true">#</a></h2>
+<p>A target is a 4×4 <code>matsimnibs</code> matrix:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">[ R  t ]      R = 3x3 rotation, columns = coil local axes in head space
+[ 0  1 ]      t = coil stimulation point in head space, mm</code></pre></div>
+<p>The position is <code>t</code>. The orientation is <code>R</code>. When a file stores many targets the layout is <code>(4, 4, n)</code> — one matrix per placement, <strong>index-aligned with the rows of the E-field library</strong>. This is why sorting the placements reorders the E-field rows and the target-order file together (see <a href="../prepare/placements.html">Coil placements</a>).</p>
+<h2 id="checklist-before-trusting-a-target">Checklist before trusting a target<a class="anchor" href="#checklist-before-trusting-a-target" aria-hidden="true">#</a></h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> The mesh, the placements and the E-field library come from the <strong>same</strong></li>
+<li class="task"><input type="checkbox" disabled> The number of placements equals the first dimension of <code>E_mag</code>.</li>
+<li class="task"><input type="checkbox" disabled> The number of E-field columns equals the number of ROI triangles.</li>
+<li class="task"><input type="checkbox" disabled> The target-order file only contains indices in <code>0 … n_placements - 1</code>.</li>
+<li class="task"><input type="checkbox" disabled> In simulation, the coil visibly touches the head at the target.</li>
+<li class="task"><input type="checkbox" disabled> In a real session, the neuronavigation's registration was accepted and</li>
+</ul>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="../prepare/placements.html">Coil placements and target order</a> — the files these conventions apply to.</li>
+<li><a href="../extend/robots.html">Add a robot</a> — where the base pose and tool site are declared.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../start/concepts.html"><span>Previous</span>Key concepts</a>
+<a class="next" href="../install/prerequisites.html"><span>Next</span>Prerequisites</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-two-unit-systems">The two unit systems</a></li><li class="l2"><a href="#the-frames">The frames</a></li><li class="l2"><a href="#the-coil-handle-convention">The coil handle convention</a></li><li class="l2"><a href="#reading-a-target">Reading a target</a></li><li class="l2"><a href="#checklist-before-trusting-a-target">Checklist before trusting a target</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

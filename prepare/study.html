@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study profiles · TMS NeuroPilot</title>
+<meta name="description" content="One protocol file for mapping, stimulation and analysis defaults.">
+<meta property="og:title" content="Study profiles · TMS NeuroPilot">
+<meta property="og:description" content="One protocol file for mapping, stimulation and analysis defaults.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2">
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li class="current"><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="study-profiles">Study profiles<a class="anchor" href="#study-profiles" aria-hidden="true">#</a></h1>
+<p>A study profile is the protocol layer: the values that stay the same for every subject of a study, as opposed to the project file, which is per subject. It is a small YAML edited on <strong>Config › Study</strong>.</p>
+<h2 id="what-it-holds">What it holds<a class="anchor" href="#what-it-holds" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Key</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><code>fit_fun</code></td><td><code>Linear</code></td><td>regression shape used for the R² map</td></tr>
+<tr><td><code>map_elms</code></td><td><code>1</code></td><td>subsampling: analyse every n-th ROI element</td></tr>
+<tr><td><code>efield_mode</code></td><td><code>Precomputed</code></td><td>default E-field mode for the session: <code>Precomputed</code>, <code>Online</code> or <code>Interpolated</code></td></tr>
+<tr><td><code>pulse_shape</code></td><td><code>Biphasic</code></td><td>stimulator waveform</td></tr>
+<tr><td><code>n_repetitions</code></td><td><code>1</code></td><td>pulses per target</td></tr>
+<tr><td><code>min_isi</code></td><td><code>4</code></td><td>minimum inter-stimulus interval, seconds</td></tr>
+<tr><td><code>amplitude</code></td><td><code>20</code></td><td>stimulator output, % MSO</td></tr>
+<tr><td><code>sampling_rate</code></td><td><code>4000</code></td><td>EMG sampling rate, Hz</td></tr>
+<tr><td><code>cutoff_freq</code></td><td><code>500</code></td><td>EMG low-pass, Hz</td></tr>
+<tr><td><code>tms_pulse_time</code></td><td><code>5</code></td><td>pulse position in the recording, tenths of a second</td></tr>
+<tr><td><code>start_mep</code></td><td><code>10</code></td><td>MEP window start, samples after the pulse</td></tr>
+<tr><td><code>end_mep</code></td><td><code>100</code></td><td>MEP window end, samples after the pulse</td></tr>
+<tr><td><code>emg_channels</code></td><td><code>FDI,APB,ADM</code></td><td>channel names, comma separated</td></tr>
+</tbody></table></div>
+<p>An example:</p>
+<div class="code"><div class="code-head"><span>yaml</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-yaml">fit_fun: Sigmoid
+map_elms: 1
+efield_mode: Precomputed
+pulse_shape: Biphasic
+n_repetitions: 3
+min_isi: 5
+amplitude: 42
+sampling_rate: 4000
+cutoff_freq: 500
+tms_pulse_time: 5
+start_mep: 10
+end_mep: 100
+emg_channels: FDI,APB,ADM</code></pre></div>
+<h2 id="save-load-apply">Save, load, apply<a class="anchor" href="#save-load-apply" aria-hidden="true">#</a></h2>
+<p>The three buttons on <strong>Config › Study</strong> are deliberately separate:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Button</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr><td><strong>Save study…</strong></td><td>writes the current values to a YAML (default <code>&lt;data folder&gt;/study.yaml</code>)</td></tr>
+<tr><td><strong>Load study…</strong></td><td>reads a YAML into the <em>widgets</em> — nothing changes in the session yet</td></tr>
+<tr><td><strong>Apply to session</strong></td><td>pushes the widget values into the live controls</td></tr>
+</tbody></table></div>
+<p>This two-step flow lets you inspect a profile before it changes a running session. The status line reports exactly what happened:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">Applied: mapping/stimulation, precomputed E-field · needs restart: MEP windows and EMG channels (restart)</code></pre></div>
+<h3 id="what-applies-immediately">What applies immediately<a class="anchor" href="#what-applies-immediately" aria-hidden="true">#</a></h3>
+<ul>
+<li>fit function and subsampling,</li>
+<li>pulse shape, repetitions, minimum interval, amplitude,</li>
+<li>the E-field mode (if that mode is available).</li>
+</ul>
+<h3 id="what-needs-a-restart">What needs a restart<a class="anchor" href="#what-needs-a-restart" aria-hidden="true">#</a></h3>
+<ul>
+<li><strong>MEP windows</strong> (<code>sampling_rate</code>, <code>cutoff_freq</code>, <code>tms_pulse_time</code>, <code>start_mep</code>, <code>end_mep</code>, <code>measurement_start_time</code>),</li>
+<li><strong>EMG channel names</strong>.</li>
+</ul>
+<p>The controller parses these at import time, so the running process keeps the old values. The status line always lists them under <em>needs restart</em>. Check that line rather than the widgets.</p>
+<h3 id="what-is-refused">What is refused<a class="anchor" href="#what-is-refused" aria-hidden="true">#</a></h3>
+<p><strong>Apply to session</strong> does nothing while a mapping is running:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">Not applied: a mapping session is running (finish it first).</code></pre></div>
+<p>Changing the fit function or subsampling mid-run would change the meaning of the map that is being built; the controller refuses instead of producing a mixed result.</p>
+<h2 id="where-to-keep-it">Where to keep it<a class="anchor" href="#where-to-keep-it" aria-hidden="true">#</a></h2>
+<ul>
+<li>Default location: <code>&lt;ROOT_FOLDER&gt;/study.yaml</code>, which makes it available to everyone using that data folder.</li>
+<li>A study with several protocols can keep one file per protocol (<code>study_rest.yaml</code>, <code>study_online.yaml</code>) and load the right one per session.</li>
+<li>The study profile is <strong>not</strong> copied into the project file. Save both: the project says which subject, the study says which protocol.</li>
+</ul>
+<h2 id="relationship-to-env">Relationship to <code>.env</code><a class="anchor" href="#relationship-to-env" aria-hidden="true">#</a></h2>
+<p>Some study values also exist as environment keys (<code>EMG_CHANNELS</code>, <code>SAMPLING_RATE</code>, …). The precedence is:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">shell environment  &gt;  .env  &gt;  study profile applied to the session</code></pre></div>
+<p>Applying a profile writes into the live controls; it does not edit <code>.env</code>. If a value in <code>.env</code> pins the same key, the next restart returns to the <code>.env</code> value. That is intentional: a lab that pins a key in <code>.env</code> should not be overridden by a colleague's study file.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="../config/model.html">Settings model</a> — the full precedence picture.</li>
+<li><a href="../gui/config.html">Config page</a> — the four scopes in the GUI.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../prepare/project.html"><span>Previous</span>The project file</a>
+<a class="next" href="../run/modes.html"><span>Next</span>Run modes</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#what-it-holds">What it holds</a></li><li class="l2"><a href="#save-load-apply">Save, load, apply</a></li><li class="l3"><a href="#what-applies-immediately">What applies immediately</a></li><li class="l3"><a href="#what-needs-a-restart">What needs a restart</a></li><li class="l3"><a href="#what-is-refused">What is refused</a></li><li class="l2"><a href="#where-to-keep-it">Where to keep it</a></li><li class="l2"><a href="#relationship-to-env">Relationship to .env</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

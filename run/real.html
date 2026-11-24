@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real session checklist · TMS NeuroPilot</title>
+<meta name="description" content="The ordered checklist for a session with a participant.">
+<meta property="og:title" content="Real session checklist · TMS NeuroPilot">
+<meta property="og:description" content="The ordered checklist for a session with a participant.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3">
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li class="current"><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="real-session-checklist">Real session checklist<a class="anchor" href="#real-session-checklist" aria-hidden="true">#</a></h1>
+<p>This is the operational page. It assumes the installation, the subject data and the lab wiring are done; the goal is that nothing about the software is decided for the first time while a subject is in the chair.</p>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: research software, not a medical device</p><p>TMS NeuroPilot has no medical approval. Real stimulation requires ethics approval, a trained operator, the stimulator's own safety limits and written consent. This checklist covers the software, not the medical procedure.</p></div>
+<h2 id="the-day-before">The day before<a class="anchor" href="#the-day-before" aria-hidden="true">#</a></h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Ethics approval and consent form are on file for this protocol.</li>
+<li class="task"><input type="checkbox" disabled> T1 and T2 MRI scans acquired for the subject.</li>
+<li class="task"><input type="checkbox" disabled> SimNIBS head mesh (<code>m2m_&lt;subj&gt;</code>) and ROI surface (<code>geo.hdf5</code>) created.</li>
+<li class="task"><input type="checkbox" disabled> Candidate coil placements (<code>search_positions.hdf5</code>) and the E-field library (<code>e.hdf5</code>) created.</li>
+<li class="task"><input type="checkbox" disabled> Coil-placement optimization chosen and run; the target-order file is generated.</li>
+<li class="task"><input type="checkbox" disabled> The prepared files pass the <a href="../prepare/subject-data.html">sanity checks</a>.</li>
+<li class="task"><input type="checkbox" disabled> A study profile is saved with the intended fit function, ISI, amplitude and MEP windows.</li>
+<li class="task"><input type="checkbox" disabled> The E-field mode is decided: precomputed (library ready) or online (solver loads in about a minute).</li>
+</ul>
+<h2 id="one-hour-before">One hour before<a class="anchor" href="#one-hour-before" aria-hidden="true">#</a></h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Production relay available. <code>neuropilot robo</code> starts it automatically when <code>TMS_ROBOT_CONTROL_PATH</code> is configured and no relay is running; otherwise it asks for the checkout.</li>
+<li class="task"><input type="checkbox" disabled> InVesalius available. It starts automatically by default; press <strong>Is started</strong> if it runs on another machine, or use <code>--no-invesalius</code>.</li>
+<li class="task"><input type="checkbox" disabled> Robot driver running: <code>python main_loop.py</code>.</li>
+<li class="task"><input type="checkbox" disabled> Controller running: <code>neuropilot robo</code> (or <code>neuropilot robo --launch-relay</code>, kept for compatibility).</li>
+<li class="task"><input type="checkbox" disabled> <strong>Connections</strong> page: relay, stimulator, EMG and robot all green.</li>
+<li class="task"><input type="checkbox" disabled> <strong>Project</strong> page: the project loads without an error dialog.</li>
+<li class="task"><input type="checkbox" disabled> <strong>Cortical results</strong>: the mesh is displayed and the coil model is loaded.</li>
+<li class="task"><input type="checkbox" disabled> Stimulator armed and the amplitude shows the value you expect.</li>
+<li class="task"><input type="checkbox" disabled> The robot's force sensor shows a reading (touch it once if the robot side says <code>Awaiting valid pressure data</code>).</li>
+</ul>
+<div class="admonition note"><p class="admonition-title"><span class="icon">ℹ</span>One command, with explicit hardware</p><p><code>neuropilot sim</code> starts all four simulated peers. In robo mode TMS NeuroPilot starts the controller, the production relay when it is configured, and a local InVesalius. The Relay card can also start or restart a relay that TMS NeuroPilot owns. <code>main_loop.py</code> remains a separate application and must be started as above.</p></div>
+<h2 id="five-minutes-before">Five minutes before<a class="anchor" href="#five-minutes-before" aria-hidden="true">#</a></h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Subject seated, head supported, coil cable routed with slack.</li>
+<li class="task"><input type="checkbox" disabled> Neuronavigation registration accepted; the coil is tracked.</li>
+<li class="task"><input type="checkbox" disabled> Emergency stop within reach of the operator.</li>
+<li class="task"><input type="checkbox" disabled> <strong>Control</strong> page: E-field mode selected, Start enabled.</li>
+<li class="task"><input type="checkbox" disabled> Amplitude, repetitions, minimum interval and pulse shape match the protocol.</li>
+<li class="task"><input type="checkbox" disabled> Stop criteria are written down and visible (see below).</li>
+</ul>
+<h2 id="during-the-session">During the session<a class="anchor" href="#during-the-session" aria-hidden="true">#</a></h2>
+<ul>
+<li>Watch the <strong>Control</strong> log, not only the 3-D view.</li>
+<li>A pulse is only fired when the coil is at target, the force is above the threshold and the minimum interval has elapsed.</li>
+<li>If a system drops out, the loop holds: <code>Held at &lt;step&gt;: &lt;system&gt; not ready. Finish ends the session.</code> Fix it, press <strong>Reconnect</strong>, and the loop continues.</li>
+<li><strong>Pause</strong> holds before the next pulse; the coil stays on the head.</li>
+<li><strong>Next</strong> skips a target, <strong>Back</strong> repeats the previous one. A pulse in flight cannot be taken back (<code>Previous ignored: a pulse is in flight.</code>).</li>
+</ul>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: stop conditions</p><p>Stop the session with <strong>Move Coil Up</strong> and then <strong>Finish</strong> if the subject reports discomfort, the coil overheats, the robot faults, the subject moves out of tracking, or the MEPs disappear without an explanation. The software cannot decide this for you.</p></div>
+<h2 id="ending">Ending<a class="anchor" href="#ending" aria-hidden="true">#</a></h2>
+<ol>
+<li>Press <strong>Finish</strong>. The controller finishes the current step, retracts the robot and waits for the last analysis.</li>
+<li>Wait for <code>We are done.</code> in the log.</li>
+<li>Confirm the results CSV exists and is not empty (path shown on the Project page under <em>Results file</em>).</li>
+<li>Export the R² table and the placement log from <strong>Cortical results</strong> if the analysis needs them: <strong>Export CSV…</strong>.</li>
+<li>Stop the controller, then <code>main_loop.py</code>, then InVesalius, then the relay.</li>
+</ol>
+<h2 id="after-the-session">After the session<a class="anchor" href="#after-the-session" aria-hidden="true">#</a></h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Results CSV copied to the study folder and backed up.</li>
+<li class="task"><input type="checkbox" disabled> R² export and placement log copied next to it.</li>
+<li class="task"><input type="checkbox" disabled> The E-field library used for the session archived with the results.</li>
+<li class="task"><input type="checkbox" disabled> The session notes record amplitude, coil, E-field mode, pulse count and any skipped targets.</li>
+<li class="task"><input type="checkbox" disabled> The subject's data folder is checked for accidental identifiers.</li>
+</ul>
+<h2 id="if-something-goes-wrong">If something goes wrong<a class="anchor" href="#if-something-goes-wrong" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Situation</th>
+<th>Immediate action</th>
+</tr></thead><tbody>
+<tr><td>Robot does not move</td><td>Check the robot card and <code>main_loop.py</code>; press <strong>Reconnect</strong></td></tr>
+<tr><td>Coil never reaches the target</td><td><strong>Next</strong> to skip; check tracking and the placement reach</td></tr>
+<tr><td>Stimulator does not fire</td><td>Check the stimulator card and the serial port; <strong>Finish</strong> if it persists</td></tr>
+<tr><td>EMG traces are flat</td><td>Check the amplifier and the share; the session can continue but the MEPs are lost</td></tr>
+<tr><td>Controller freezes</td><td>Kill and restart the controller; the results of completed pulses are in the CSV</td></tr>
+</tbody></table></div>
+<p>See <a href="../reference/troubleshooting.html">Troubleshooting</a> for the full table.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="manual.html">Manual mode</a>: the same session without a robot.</li>
+<li><a href="../results/export.html">Export and data formats</a>: what the session leaves behind.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../run/simulated.html"><span>Previous</span>A simulated session</a>
+<a class="next" href="../run/collision-test.html"><span>Next</span>Collision test</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-day-before">The day before</a></li><li class="l2"><a href="#one-hour-before">One hour before</a></li><li class="l2"><a href="#five-minutes-before">Five minutes before</a></li><li class="l2"><a href="#during-the-session">During the session</a></li><li class="l2"><a href="#ending">Ending</a></li><li class="l2"><a href="#after-the-session">After the session</a></li><li class="l2"><a href="#if-something-goes-wrong">If something goes wrong</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

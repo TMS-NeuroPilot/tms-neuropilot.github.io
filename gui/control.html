@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control page · TMS NeuroPilot</title>
+<meta name="description" content="Start, pause, skip and tune a mapping; read the live status and log.">
+<meta property="og:title" content="Control page · TMS NeuroPilot">
+<meta property="og:description" content="Start, pause, skip and tune a mapping; read the live status and log.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section active" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4">
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li class="current"><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="control-page">Control page<a class="anchor" href="#control-page" aria-hidden="true">#</a></h1>
+<p>The <strong>Control</strong> page runs the session: stimulation settings, the E-field mode, the transport buttons, the robot view and the log.</p>
+<figure>
+  <img src="../assets/screenshots/control-precomputed.png?v=475a9995" alt="The Control page with the precomputed E-field mode selected and Start enabled.">
+  <figcaption>Transport buttons at the top, stimulation and E-field cards on the
+  left, robot speeds and the log on the right.</figcaption>
+</figure>
+<h2 id="transport-row">Transport row<a class="anchor" href="#transport-row" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Button</th>
+<th>Action</th>
+<th>Notes</th>
+</tr></thead><tbody>
+<tr><td><strong>Move Coil Up</strong></td><td>stop, pause, retract the robot</td><td>the safest way to interrupt</td></tr>
+<tr><td><strong>Back</strong></td><td>repeat the previous target</td><td>ignored while a pulse is in flight</td></tr>
+<tr><td><strong>Start / Pause</strong></td><td>start the mapping; while running, pause before the next pulse</td><td>the label toggles</td></tr>
+<tr><td><strong>Next</strong></td><td>skip the current target</td><td>implemented as <code>skip</code> → <code>COMPLETE</code></td></tr>
+<tr><td><strong>Finish</strong></td><td>end the session after the current step</td><td>always enabled during a run</td></tr>
+</tbody></table></div>
+<p>In the top-right corner of the robot view: <strong>Total targets</strong> (the length of the order list) and <strong>Current</strong> (the pulse counter and the active target).</p>
+<h2 id="stimulation-card">Stimulation card<a class="anchor" href="#stimulation-card" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Range</th>
+<th>Effect</th>
+</tr></thead><tbody>
+<tr><td><strong>Amplitude</strong> slider + spin</td><td>0–100 % MSO</td><td>sets the stimulator output; the slider and spin mirror each other</td></tr>
+<tr><td><strong>Repetitions</strong></td><td>1–100</td><td>pulses per target</td></tr>
+<tr><td><strong>Min. interval</strong></td><td>1–60 s</td><td>minimum ISI, measured on the monotonic clock</td></tr>
+<tr><td><strong>Pulse shape</strong></td><td>Biphasic / Monophasic</td><td>stimulator waveform</td></tr>
+<tr><td><strong>Enable</strong></td><td>—</td><td>arms the stimulator for a single manual pulse</td></tr>
+<tr><td><strong>Fire</strong></td><td>—</td><td>fires one pulse; only after <strong>Enable</strong></td></tr>
+</tbody></table></div>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: amplitude changes reach the stimulator</p><p>Moving the amplitude slider sends <code>set_amplitude_stim</code> immediately. Confirm the value on the stimulator itself before the first pulse, and never change it while a pulse is in flight.</p></div>
+<p>The <strong>Fire</strong> button is for testing a single pulse outside the loop. It is gated on <strong>Enable</strong> and is independent of the mapping; arming does not start a session.</p>
+<h2 id="e-field-card">E-Field card<a class="anchor" href="#e-field-card" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><strong>Precomputed E-Field</strong></td><td>use the library loaded in the project</td></tr>
+<tr><td><strong>Online E-Field</strong></td><td>solve the field per pulse with SimNIBS</td></tr>
+<tr><td><strong>Interpolated</strong></td><td>interpolate the field from the dense library (<code>surrogate_library_path</code>), with a domain guard</td></tr>
+<tr><td>hint line</td><td>what the mode is doing now (see <a href="../run/efield-modes.html">E-field modes</a>)</td></tr>
+</tbody></table></div>
+<p>Start is disabled until a mode is selected. The mode is switchable during a run; pulses are held while the online solver warms up or the interpolated library loads.</p>
+<h2 id="robot-card">Robot card<a class="anchor" href="#robot-card" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><strong>Enable free drive</strong></td><td>let the operator move the arm by hand (robo mode)</td></tr>
+<tr><td><strong>Default speed</strong></td><td>speed while travelling between targets, %</td></tr>
+<tr><td><strong>Tuning speed</strong></td><td>speed near the head, %</td></tr>
+</tbody></table></div>
+<p>Both speeds are pushed to the robot when a session starts, so the robot runs with the values shown in the GUI rather than its power-on defaults.</p>
+<h2 id="log-card">Log card<a class="anchor" href="#log-card" aria-hidden="true">#</a></h2>
+<p>A read-only log of the state machine:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">=== BEGIN TARGET 000 (1/1) ===
+Sending target to InVesalius!
+Tracking target with robot!
+Stopping target tracking.
+Firing Stimulator!</code></pre></div>
+<p>Health holds, skipped pulses, aim-error warnings and analysis messages appear here too. The same lines are printed to the terminal.</p>
+<h2 id="robot-view">Robot view<a class="anchor" href="#robot-view" aria-hidden="true">#</a></h2>
+<p>In simulation the lower right shows the MuJoCo scene: the arm, the head model and the coil. It is a rendering of the robot's joint state, not a measurement.</p>
+<p>In real, manual and training modes there is no robot scene.</p>
+<h2 id="button-gating">Button gating<a class="anchor" href="#button-gating" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Condition</th>
+<th>Effect</th>
+</tr></thead><tbody>
+<tr><td>no E-field mode</td><td>Start, Next, Back, Move Coil Up disabled</td></tr>
+<tr><td>precomputed mode without a library</td><td>same</td></tr>
+<tr><td>online mode while the solver warms up</td><td>Start disabled until ready</td></tr>
+<tr><td>a system in error</td><td>Start disabled; during a run the loop holds</td></tr>
+<tr><td>run in progress</td><td>Finish always enabled</td></tr>
+</tbody></table></div>
+<h2 id="keyboard-and-accessibility">Keyboard and accessibility<a class="anchor" href="#keyboard-and-accessibility" aria-hidden="true">#</a></h2>
+<p>The window scales with <code>NEUROPILOT_UI_SCALE</code>; see <a href="themes.html">Themes and display</a>. The buttons expose their labels as accessibility names, and the log is selectable text so it can be copied into a bug report.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="mep.html">MEP results page</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../gui/connections.html"><span>Previous</span>Connections page</a>
+<a class="next" href="../gui/mep.html"><span>Next</span>MEP results page</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#transport-row">Transport row</a></li><li class="l2"><a href="#stimulation-card">Stimulation card</a></li><li class="l2"><a href="#e-field-card">E Field card</a></li><li class="l2"><a href="#robot-card">Robot card</a></li><li class="l2"><a href="#log-card">Log card</a></li><li class="l2"><a href="#robot-view">Robot view</a></li><li class="l2"><a href="#button-gating">Button gating</a></li><li class="l2"><a href="#keyboard-and-accessibility">Keyboard and accessibility</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cortical results page · TMS NeuroPilot</title>
+<meta name="description" content="The 3-D R² map, placement overlays, selection readout and export.">
+<meta property="og:title" content="Cortical results page · TMS NeuroPilot">
+<meta property="og:description" content="The 3-D R² map, placement overlays, selection readout and export.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section active" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4">
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li class="current"><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="cortical-results-page">Cortical results page<a class="anchor" href="#cortical-results-page" aria-hidden="true">#</a></h1>
+<p>The 3-D view shows the regression result as a colour map on the ROI surface mesh — the R² value of each triangle is mapped to a colour, not painted onto the anatomy. This page documents the viewport, the four cards next to it and the export.</p>
+<figure>
+  <img src="../assets/screenshots/cortical-results.png?v=475a9995" alt="The Cortical results page with an R² map on the ROI surface, placements and the coil handles.">
+  <figcaption>The ROI surface coloured by R² for the FDI channel, with the
+  best element marked and its values pinned in the Selection card.</figcaption>
+</figure>
+<h2 id="the-viewport">The viewport<a class="anchor" href="#the-viewport" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Interaction</th>
+<th>Effect</th>
+</tr></thead><tbody>
+<tr><td>drag</td><td>rotate</td></tr>
+<tr><td>scroll</td><td>zoom</td></tr>
+<tr><td>middle-drag / shift-drag</td><td>pan</td></tr>
+<tr><td>hover</td><td>show element R² and coordinates in <strong>Selection</strong></td></tr>
+<tr><td>click</td><td>pin the readout (hover no longer overwrites it)</td></tr>
+<tr><td><strong>B</strong></td><td>mark the best R² element of the selected channel</td></tr>
+<tr><td><strong>H</strong></td><td>toggle head mesh / ROI surface</td></tr>
+<tr><td><strong>F</strong></td><td>reset the camera to the home view</td></tr>
+</tbody></table></div>
+<p>The surface selector above the viewport switches between the head mesh and the ROI. <strong>Show results</strong> offers <strong>No results</strong> and one entry per EMG channel (<strong>FDI</strong>, <strong>APB</strong>, …) for the computed R² maps on the ROI. Tissue labels are not offered as a result; the head is shown in plain colour. <strong>Show edges</strong> overlays the triangle wireframe; it is on by default.</p>
+<p>In simulation and training, a loaded EMG source config also marks each channel's source as a labelled sphere on the ROI surface. The sphere colour matches the channel label; it is independent of the R² colour map.</p>
+<div class="admonition note"><p class="admonition-title"><span class="icon">ℹ</span>No map is drawn before three pulses</p><p>The readout says <em>"No R² map yet — needs at least three pulses."</em> until the regression has enough samples. That is a threshold, not a bug.</p></div>
+<div class="admonition note"><p class="admonition-title"><span class="icon">ℹ</span>Localisation, not significance</p><p>R² measures how much of the MEP variance the field at an element explains. It is not corrected for multiple comparisons and is not a significance test. Report the pulse count, exclusions, fit function and E-field mode with the map (see <a href="../results/analysis.html">Analysis and fits</a>).</p></div>
+<h2 id="results-card">Results card<a class="anchor" href="#results-card" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><strong>Channel</strong></td><td>EMG channel display name</td></tr>
+<tr><td><strong>max R²</strong></td><td>the best R² over all ROI elements for that channel</td></tr>
+<tr><td><strong>element</strong></td><td>the ROI triangle index where it occurs</td></tr>
+</tbody></table></div>
+<p>Clicking a row marks that channel's best element on the mesh. The summary line below restates the pulse count and the fit function in use.</p>
+<h2 id="mapping-card">Mapping card<a class="anchor" href="#mapping-card" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><strong>Fit function</strong></td><td>one of the nine shapes (<code>Linear</code>, <code>Sigmoid</code>, …); see <a href="../results/analysis.html">Analysis and fits</a></td></tr>
+<tr><td><strong>Subsampling</strong></td><td>analyse every n-th element (<code>map_elms</code>); 1 = every element</td></tr>
+</tbody></table></div>
+<p>Changing either during a run is refused: it would change the meaning of the map being built. Change them before Start, or finish the session first.</p>
+<h2 id="display-card">Display card<a class="anchor" href="#display-card" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><strong>Colour by</strong></td><td>what the placement spheres show: trial number, aim error, or a channel's MEP</td></tr>
+<tr><td><strong>Show coil placements</strong></td><td>draw the realised coil positions</td></tr>
+<tr><td><strong>Coil handles</strong></td><td>draw the handle direction of each placement</td></tr>
+<tr><td><strong>Path between placements</strong></td><td>connect the placements in acquisition order</td></tr>
+<tr><td><strong>Mark best R²</strong></td><td>mark the best element of the selected channel</td></tr>
+<tr><td><strong>Clear</strong></td><td>remove the marks</td></tr>
+</tbody></table></div>
+<p>The placement colours are independent of the surface colours: the surface is the regression, the placements are the pulses.</p>
+<h2 id="selection-card">Selection card<a class="anchor" href="#selection-card" aria-hidden="true">#</a></h2>
+<p>Two kinds of readout, both pinned by a click:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">ELEMENT 5208   ·   pinned
+xyz      -25.1, 15.5, 55.8  mm
+FDI      R²   0.421
+APB      R²   0.187</code></pre></div>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">TRIAL 4  ·  pulse 4
+xyz      -26.0, 15.1, 56.2  mm
+aim error   1.3  mm
+intensity     42  %MSO
+E-field   precomputed
+MEP FDI     1.84  mV</code></pre></div>
+<p>If the pulse used the online solver, the readout says <code>online</code>. If a pulse was excluded from the mapping, the MEP is still shown but the element R² does not include it.</p>
+<h2 id="export">Export<a class="anchor" href="#export" aria-hidden="true">#</a></h2>
+<p><strong>Export CSV…</strong> writes three files sharing one base name:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>File</th>
+<th>Contents</th>
+</tr></thead><tbody>
+<tr><td><code>&lt;base&gt;_roi_r2.csv</code></td><td>element, x/y/z (mm), one <code>r2_&lt;channel&gt;</code> column per channel</td></tr>
+<tr><td><code>&lt;base&gt;_placements.csv</code></td><td>one row per pulse: realised pose, target pose, aim error, intensity, pressure, E-field mode, MEP per channel</td></tr>
+<tr><td><code>&lt;base&gt;_README.txt</code></td><td>the column dictionary, units and frames</td></tr>
+</tbody></table></div>
+<p>The README is generated next to the data on purpose: an exported table without its units is ambiguous. The full column list is in <a href="../results/export.html">Export and data formats</a>.</p>
+<p><strong>Screenshot…</strong> saves the current view (including the corner overlays) as a PNG. The export and the screenshot both fail gracefully if the target folder was deleted — the message appears in the Selection card.</p>
+<h2 id="what-the-colours-mean">What the colours mean<a class="anchor" href="#what-the-colours-mean" aria-hidden="true">#</a></h2>
+<ul>
+<li><strong>R²</strong> is per element and per channel, computed from the pulses collected so far. A dark blue element is not "unstimulated"; it is an element whose field did not co-vary with the MEP.</li>
+<li>The scale is fixed to <strong>0 to 1</strong> for R², so the colour of a value means the same thing in every session and every screenshot.</li>
+<li>Tissue colours on the head mesh are anatomy, not results.</li>
+</ul>
+<h2 id="keyboard-summary">Keyboard summary<a class="anchor" href="#keyboard-summary" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Key</th>
+<th>Action</th>
+</tr></thead><tbody>
+<tr><td><code>B</code></td><td>mark best R²</td></tr>
+<tr><td><code>H</code></td><td>head / ROI</td></tr>
+<tr><td><code>F</code></td><td>home camera</td></tr>
+</tbody></table></div>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="config.html">Config page</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../gui/mep.html"><span>Previous</span>MEP results page</a>
+<a class="next" href="../gui/config.html"><span>Next</span>Config page</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-viewport">The viewport</a></li><li class="l2"><a href="#results-card">Results card</a></li><li class="l2"><a href="#mapping-card">Mapping card</a></li><li class="l2"><a href="#display-card">Display card</a></li><li class="l2"><a href="#selection-card">Selection card</a></li><li class="l2"><a href="#export">Export</a></li><li class="l2"><a href="#what-the-colours-mean">What the colours mean</a></li><li class="l2"><a href="#keyboard-summary">Keyboard summary</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

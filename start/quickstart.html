@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick start · TMS NeuroPilot</title>
+<meta name="description" content="Run a complete simulated mapping session in ten minutes.">
+<meta property="og:title" content="Quick start · TMS NeuroPilot">
+<meta property="og:description" content="Run a complete simulated mapping session in ten minutes.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section active" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0">
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li class="current"><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="quick-start">Quick start<a class="anchor" href="#quick-start" aria-hidden="true">#</a></h1>
+<p>From a fresh clone to a running simulated mapping session. No hardware and no subject data are needed. The installation is one command; the manual recipe, the Windows notes and the optional components are one link away.</p>
+<div class="admonition abstract"><p class="admonition-title"><span class="icon">ℹ</span>What you will have at the end</p><p>The simulated stack running in one terminal (relay, virtual neuronavigation, virtual robot and the controller) and one mapping session in which the controller has driven the robot, fired the stimulator, analysed the EMG and rendered an R² map on a cortical surface mesh.</p>
+<p>A real session uses InVesalius for the neuronavigation and <code>tms-robot-control</code> for the robot; this page stays with their virtual twins.</p></div>
+<h2 id="1-get-the-code">1. Get the code<a class="anchor" href="#1-get-the-code" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">git clone https://github.com/TMS-NeuroPilot/tms-neuropilot.git
+cd neuropilot</code></pre></div>
+<p>The example subject lives in its own repository (<code>tms-neuropilot-data</code>):</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">git lfs install
+git clone https://gitlab.gwdg.de/tms-localization/tms-neuropilot/tms-neuropilot-data.git data/ernie</code></pre></div>
+<h2 id="2-install-with-one-command">2. Install with one command<a class="anchor" href="#2-install-with-one-command" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">scripts/install.sh</code></pre></div>
+<p>The only prerequisite is conda (miniforge or miniconda) on the PATH. The script</p>
+<ol>
+<li>creates <code>.env</code> from <code>.env.example</code> if it is missing,</li>
+<li>creates the conda environment <code>neuropilot</code> from <code>environment.yml</code>, or reuses it when it already exists,</li>
+<li>installs TMS NeuroPilot in editable mode (<code>pip install -e . --no-deps</code>),</li>
+<li>installs the MKL build that the SimNIBS solver wheel links against, and repairs the library search path where the wheel expects the older sonames,</li>
+<li>verifies that every required module imports and stops with the failing import instead of leaving a half-working environment.</li>
+</ol>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Flag</th>
+<th>Effect</th>
+</tr></thead><tbody>
+<tr><td><code>--env-name NAME</code></td><td>use a different conda environment</td></tr>
+<tr><td><code>--with-invesalius</code></td><td>also create the <code>invesalius</code> environment (real, manual and training sessions)</td></tr>
+<tr><td><code>--with-robot-control</code></td><td>also clone the robot-control fork (real sessions)</td></tr>
+</tbody></table></div>
+<p>The virtual stack and the precomputed mapping mode run without SimNIBS; the online E-field mode and the display of SimNIBS head meshes need it. <code>--with-invesalius</code> is only needed when the neuronavigation is real.</p>
+<div class="admonition info"><p class="admonition-title"><span class="icon">ℹ</span>Manual installation</p><p><a href="../install/install.html">Install the suite</a> has the step-by-step recipe: the exact conda and pip commands, Windows, SimNIBS and its solver, InVesalius, the desktop entry, updating and resetting.</p></div>
+<h2 id="3-bootstrap-configuration">3. Bootstrap configuration<a class="anchor" href="#3-bootstrap-configuration" aria-hidden="true">#</a></h2>
+<p><code>scripts/install.sh</code> already copied <code>.env.example</code> to <code>.env</code>. The file holds what must exist before the GUI opens: the relay endpoint, the data folder, the readiness timeout and the control-panel flag. Every value has a working default, so a simulator session needs no edit. The full key list is in the <a href="../config/env.html"><code>.env</code> reference</a>.</p>
+<div class="admonition note"><p class="admonition-title"><span class="icon">ℹ</span>Where does session data go?</p><p><code>ROOT_FOLDER</code> defaults to <code>~/.neuropilot</code> (Linux) or <code>C:\Users\&lt;name&gt;\.neuropilot</code> (Windows). Results, plots and the session cache are written there.</p></div>
+<h2 id="4-start-the-simulated-stack">4. Start the simulated stack<a class="anchor" href="#4-start-the-simulated-stack" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">conda activate neuropilot
+neuropilot sim</code></pre></div>
+<p>The supervisor starts the components in dependency order and waits for each readiness probe before starting the next:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">[neuropilot] started relay (pid 12345)
+[relay] [SIM RELAY] Starting simulation relay on http://127.0.0.1:5000
+[neuropilot] relay ready on 127.0.0.1:5000
+[neuropilot] started nav (pid 12346)
+[nav] [virtual_neuronavigation] Connected to http://127.0.0.1:5000
+[neuropilot] nav ready
+[neuropilot] started robot (pid 12347)
+[robot] … sim_client — Connected to relay server at http://127.0.0.1:5000
+[neuropilot] robot ready
+[neuropilot] started controller (pid 12348)</code></pre></div>
+<p>A MuJoCo viewer window opens next to the controller window. Four components, one terminal, one Ctrl+C to stop everything.</p>
+<div class="admonition tip"><p class="admonition-title"><span class="icon">💡</span>Cold start is slower</p><p>The first launch compiles the MuJoCo scene and imports SimNIBS/pyvista. Expect 20–40 s before the controller window appears; later starts are faster. The readiness budget is <code>READINESS_TIMEOUT_S</code> (default 60 s).</p></div>
+<h2 id="5-prepare-a-subject-with-the-three-scripts">5. Prepare a subject with the three scripts<a class="anchor" href="#5-prepare-a-subject-with-the-three-scripts" aria-hidden="true">#</a></h2>
+<p>A project needs the subject's head model, the ROI surface, the E-field library and the target order. Three scripts produce them in order, each reading the output of the one before:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash"># 1. Head model: MRI to SimNIBS mesh (charm), ROI surface in the mesh HDF5
+python scripts/01_create_head_model.py \
+    -s data/&lt;subj&gt;/&lt;subj&gt;.hdf5 \
+    -m mesh_&lt;subj&gt;_lincc \
+    --charm_ini scripts/configs/charm_410.ini
+
+# 2. Coil-placement library and ROI E-fields
+python scripts/02_create_roi_efield_library.py \
+    --mesh-msh data/&lt;subj&gt;/mesh/m2m_&lt;subj&gt;/&lt;subj&gt;.msh \
+    --roi-hdf5 data/&lt;subj&gt;/mesh/m2m_&lt;subj&gt;/&lt;subj&gt;.hdf5 \
+    --roi-idx midlayer_m1s1pmd \
+    --coil data/&lt;subj&gt;/coil/MagVenture_MCF-B65_new.ccd \
+    --out data/&lt;subj&gt;/efield/e.hdf5
+
+# 3. Optimized target order from the library
+python scripts/03_create_optimized_sequences.py \
+    --e-hdf5 data/&lt;subj&gt;/efield/e.hdf5 \
+    --n-stim 500</code></pre></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Script</th>
+<th>Input</th>
+<th>Output</th>
+<th>What it does</th>
+</tr></thead><tbody>
+<tr><td><code>01_create_head_model.py</code></td><td>T1 (and T2, DWI if available)</td><td><code>m2m_&lt;subj&gt;/&lt;subj&gt;.msh</code>, subject HDF5</td><td><code>charm</code> segmentation and meshing, anisotropic conductivity from the DWI, ROI surface in the mesh file</td></tr>
+<tr><td><code>02_create_roi_efield_library.py</code></td><td>head mesh, ROI, coil</td><td><code>e.hdf5</code></td><td>placement grid of scalp positions and handle rotations, one FEM solve per placement, design matrix with a hash over the ROI element order</td></tr>
+<tr><td><code>03_create_optimized_sequences.py</code></td><td><code>e.hdf5</code></td><td>one <code>*.txt</code> per algorithm</td><td>farthest-point, D-optimal and RBF-kernel D-optimal sequences</td></tr>
+</tbody></table></div>
+<p>Two helpers complete the set: <code>03_validate_efield_surrogate.py</code> scores a library against the interpolation (random 80/20 and leave-positions-out split), and <code>04_export_efield_vtk_series.py</code> exports it as ParaView time series. <code>sort_coil_placements.py</code> reorders a sequence for minimal robot travel.</p>
+<p>The artefacts, their formats and what TMS NeuroPilot validates when it loads them are described in <a href="../prepare/subject-data.html">Subject data</a>.</p>
+<h2 id="6-load-a-mapping-project">6. Load a mapping project<a class="anchor" href="#6-load-a-mapping-project" aria-hidden="true">#</a></h2>
+<p>The controller needs a project: the subject mesh, the coil placements, the E-field library, the EMG sources and the output paths. Two ways to get one:</p>
+<div class="tabs"><div class="tablist" role="tablist"></div><div class="panes"></div></div>
+<p>The example subject repository provides the SimNIBS data under <code>data/ernie</code>. Build a project file whose paths are relative to the project:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">    python docs/site/tools/make_demo_project.py</code></pre></div>
+<p>It prints the project path (default <code>/tmp/np_demo/NP001/NP001.yaml</code>). In the controller, open the <strong>Project</strong> page, click <strong>Load</strong>, and select it.</p>
+<p>This is the real example head, so the geometry is meaningful, but it is still a tutorial dataset, not a study subject.</p>
+<div class="tabs"><div class="tablist" role="tablist"></div><div class="panes"></div></div>
+<p>Prepare the files with the three scripts above, add the EMG channel sources and the coil model, and save the project file. This is the path for a real session; the simulator does not need hardware, but it does need a project.</p>
+<p>Once loaded, the <strong>Project</strong> page shows every path and the <strong>Cortical results</strong> page has a mesh to draw on.</p>
+<figure>
+  <img src="../assets/screenshots/project-demo.png?v=475a9995" alt="The Project page with every file slot filled by the demo dataset.">
+  <figcaption>The Project page after loading a project. Each row is one file;
+  the folder buttons on the right open the file dialog in a sensible
+  directory.</figcaption>
+</figure>
+<h2 id="7-connect-choose-the-e-field-mode-run">7. Connect, choose the E-field mode, run<a class="anchor" href="#7-connect-choose-the-e-field-mode-run" aria-hidden="true">#</a></h2>
+<ol>
+<li>Open the <strong>Connections</strong> page and press <strong>Reconnect</strong> if a card is still grey. In simulation all four systems turn green within a second or two.</li>
+<li>Open the <strong>Control</strong> page and choose <strong>Precomputed E-Field</strong>. Start is disabled until a mode is chosen; that is the intended gate, not a bug.</li>
+<li>Set the amplitude and repetitions for the demo (the defaults are fine).</li>
+<li>Press <strong>Start</strong>. The controller creates a marker in the neuronavigation, the robot moves the coil to it, the stimulator fires, and the MEP appears on the <strong>MEP results</strong> page.</li>
+<li>Watch the <strong>Cortical results</strong> page: the first R² map appears after three pulses.</li>
+</ol>
+<figure>
+  <img src="../assets/screenshots/control-precomputed.png?v=475a9995" alt="The Control page with the precomputed E-field mode selected and Start enabled.">
+  <figcaption>The Control page. Left: stimulation and speed settings. Middle:
+  E-field mode and transport. Right: the robot view and the session log.</figcaption>
+</figure>
+<h2 id="8-finish-and-stop">8. Finish and stop<a class="anchor" href="#8-finish-and-stop" aria-hidden="true">#</a></h2>
+<ul>
+<li><strong>Finish</strong> ends the mapping and writes the results CSV.</li>
+<li>Ctrl+C in the terminal where <code>neuropilot sim</code> runs stops all four components.</li>
+</ul>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">[controller] shutting down
+[robot]      stopped
+[nav]        stopped
+[relay]      stopped</code></pre></div>
+<h2 id="if-it-does-not-start">If it does not start<a class="anchor" href="#if-it-does-not-start" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>First thing to try</th>
+</tr></thead><tbody>
+<tr><td><code>neuropilot: command not found</code></td><td><code>conda activate neuropilot</code>, then rerun <code>scripts/install.sh</code></td></tr>
+<tr><td><code>scripts/install.sh</code> fails on an import</td><td>The script prints the failing module; rerun it after fixing the environment, it is idempotent</td></tr>
+<tr><td>Controller window never appears</td><td>Check the last 30 lines of the terminal for a traceback; a missing <code>DISPLAY</code> is the usual cause on a remote machine</td></tr>
+<tr><td><code>ROOT_FOLDER</code> permission error</td><td><code>ROOT_FOLDER=/tmp/neuropilot_test neuropilot sim</code></td></tr>
+<tr><td>MuJoCo window fails to open on Wayland</td><td>See <code>PYGLFW_LIBRARY</code> in <a href="../reference/troubleshooting.html">Troubleshooting</a></td></tr>
+<tr><td>Port 5000 already in use</td><td>Something else is bound to it; stop it or set <code>RELAY_PORT</code> in <code>.env</code></td></tr>
+</tbody></table></div>
+<p>The full symptom, cause and fix table is in <a href="../reference/troubleshooting.html">Troubleshooting</a>.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="concepts.html">Key concepts</a>: the vocabulary used by every other page.</li>
+<li><a href="../run/simulated.html">A simulated session</a>: the same walkthrough with more detail, including what each step does on the wire.</li>
+<li><a href="../run/real.html">Real session checklist</a>: when you are ready for hardware.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../start/use-cases.html"><span>Previous</span>Use cases</a>
+<a class="next" href="../start/concepts.html"><span>Next</span>Key concepts</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#1-get-the-code">1. Get the code</a></li><li class="l2"><a href="#2-install-with-one-command">2. Install with one command</a></li><li class="l2"><a href="#3-bootstrap-configuration">3. Bootstrap configuration</a></li><li class="l2"><a href="#4-start-the-simulated-stack">4. Start the simulated stack</a></li><li class="l2"><a href="#5-prepare-a-subject-with-the-three-scripts">5. Prepare a subject with the three scripts</a></li><li class="l2"><a href="#6-load-a-mapping-project">6. Load a mapping project</a></li><li class="l2"><a href="#7-connect-choose-the-e-field-mode-run">7. Connect, choose the E field mode, run</a></li><li class="l2"><a href="#8-finish-and-stop">8. Finish and stop</a></li><li class="l2"><a href="#if-it-does-not-start">If it does not start</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

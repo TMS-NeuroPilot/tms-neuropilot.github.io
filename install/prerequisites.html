@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prerequisites · TMS NeuroPilot</title>
+<meta name="description" content="Python, Qt, SimNIBS, a display and the hardware a real session needs.">
+<meta property="og:title" content="Prerequisites · TMS NeuroPilot">
+<meta property="og:description" content="Python, Qt, SimNIBS, a display and the hardware a real session needs.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1">
+<li class="current"><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="prerequisites">Prerequisites<a class="anchor" href="#prerequisites" aria-hidden="true">#</a></h1>
+<h2 id="what-kind-of-machine">What kind of machine<a class="anchor" href="#what-kind-of-machine" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Requirement</th>
+<th>Details</th>
+</tr></thead><tbody>
+<tr><td><strong>Operating system</strong></td><td>Linux. The suite is developed and used on Debian/Ubuntu; macOS and Windows are not tested.</td></tr>
+<tr><td><strong>Display</strong></td><td>A graphical session (X11, or Wayland with XWayland). The controller is a PyQt5 application and needs a display; headless runs only make sense for the test suite.</td></tr>
+<tr><td><strong>Python</strong></td><td>3.11, in a conda environment named <code>neuropilot</code> throughout this documentation.</td></tr>
+<tr><td><strong>Disk</strong></td><td>~6 GB for the environment and SimNIBS; subject meshes and E-field libraries add several GB per subject.</td></tr>
+<tr><td><strong>RAM</strong></td><td>8 GB is enough for the simulator and the GUI; a full SimNIBS head mesh and the online solver are happier with 16 GB.</td></tr>
+<tr><td><strong>GPU</strong></td><td>None required. The 3-D view uses OpenGL; Mesa's software renderer is fine for everything except smooth interaction with a million-triangle mesh.</td></tr>
+</tbody></table></div>
+<h2 id="software">Software<a class="anchor" href="#software" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Piece</th>
+<th>Needed for</th>
+<th>Comes from</th>
+</tr></thead><tbody>
+<tr><td>Python 3.11 + <code>pip</code></td><td>everything</td><td>conda / miniforge</td></tr>
+<tr><td>PyQt5, <code>qasync</code></td><td>the controller GUI and its event loop</td><td>conda-forge</td></tr>
+<tr><td><code>pyvista</code>, <code>vtk</code></td><td>the 3-D cortical view</td><td>conda-forge / pip</td></tr>
+<tr><td><code>pynibs</code></td><td>MEP extraction and the fit functions</td><td>pip (GitLab)</td></tr>
+<tr><td><code>h5py</code>, <code>numpy</code>, <code>scipy</code></td><td>every data file</td><td>conda-forge</td></tr>
+<tr><td><code>python-socketio</code>, <code>aiohttp</code></td><td>the relay client</td><td>pip</td></tr>
+<tr><td><code>python-dotenv</code>, <code>pyyaml</code></td><td>configuration</td><td>pip</td></tr>
+<tr><td><code>mujoco</code>, <code>pybullet</code>, <code>ikpy</code></td><td>the virtual robot</td><td>pip</td></tr>
+<tr><td><strong>SimNIBS 4.5</strong></td><td>the online E-field solver and <code>.msh</code> meshes</td><td>SimNIBS wheel + MKL/MUMPS</td></tr>
+<tr><td><code>magicpy</code></td><td>driving the stimulator (MagVenture)</td><td>pip (vendor package)</td></tr>
+<tr><td><code>smbprotocol</code></td><td>reading the EMG files from the acquisition PC</td><td>pip</td></tr>
+<tr><td><a href="install.html">InVesalius</a></td><td>real-mode and training neuronavigation</td><td>separate conda env</td></tr>
+<tr><td><code>tms-robot-control</code></td><td>real-mode robot driver + production relay</td><td>separate checkout (from the authors)</td></tr>
+</tbody></table></div>
+<p><code>pynibs</code> and <code>magicpy</code> are lab packages; if <code>pip install pynibs</code> cannot find them on PyPI, install them from a local wheel or ask the authors for a checkout. The suite imports them lazily, so the simulator runs without <code>magicpy</code>.</p>
+<h2 id="knowledge">Knowledge<a class="anchor" href="#knowledge" aria-hidden="true">#</a></h2>
+<p>You should be comfortable with:</p>
+<ul>
+<li>a terminal and a conda environment (activate, install, run);</li>
+<li>editing a YAML file without breaking indentation;</li>
+<li>the TMS basics: coil orientation, motor threshold, MEP, resting motor territory, why the coil needs to stay on target.</li>
+</ul>
+<p>You do <strong>not</strong> need to know SimNIBS, FEM, Qt or robot kinematics to run the simulator; the site explains what each file is for.</p>
+<h2 id="for-a-real-session-only">For a real session only<a class="anchor" href="#for-a-real-session-only" aria-hidden="true">#</a></h2>
+<p>The full hardware list is on <a href="hardware.html">Hardware setup</a>. In short: the TMS robot, the neuronavigation camera and PCs, the stimulator, the EMG amplifier and a network that connects them. None of it is needed to install or explore the software.</p>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: research software, not a medical device</p><p>TMS NeuroPilot has no medical approval. Real stimulation requires ethics approval, a trained operator, the stimulator's own safety limits and the subject's written consent. Do not use it to make clinical decisions.</p></div>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="install.html">Install the suite</a></li>
+<li><a href="hardware.html">Hardware setup</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../start/units.html"><span>Previous</span>Units and frames</a>
+<a class="next" href="../install/install.html"><span>Next</span>Install the suite</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#what-kind-of-machine">What kind of machine</a></li><li class="l2"><a href="#software">Software</a></li><li class="l2"><a href="#knowledge">Knowledge</a></li><li class="l2"><a href="#for-a-real-session-only">For a real session only</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

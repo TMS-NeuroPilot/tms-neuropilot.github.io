@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collision test · TMS NeuroPilot</title>
+<meta name="description" content="Find a subject position, robot base and start pose that survive every placement before a real run.">
+<meta property="og:title" content="Collision test · TMS NeuroPilot">
+<meta property="og:description" content="Find a subject position, robot base and start pose that survive every placement before a real run.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3">
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li class="current"><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="collision-test">Collision test<a class="anchor" href="#collision-test" aria-hidden="true">#</a></h1>
+<p>Long coil handles and a subject who can only sit a few ways make robot-cell layout a real constraint. The <strong>Collision test</strong> page lets you find a subject position, robot base and start configuration before a real experiment, using the selected robot model in a local MuJoCo scene. It does not stimulate, record EMG, fit a map or talk to the real robot.</p>
+<p>The page is available in every mode that has a robot. It is disabled in manual and training modes, where there is no arm to test.</p>
+<h2 id="what-it-checks">What it checks<a class="anchor" href="#what-it-checks" aria-hidden="true">#</a></h2>
+<ul>
+<li>the robot and coil holder against the subject head phantom;</li>
+<li>robot self-collision;</li>
+<li>every placement in the project's placement file, in file order;</li>
+<li>the direct joint-space path from the start pose and then from one placement to the next.</li>
+</ul>
+<p>It pauses at the first collision and leaves the arm at that pose, so you can see what hit. The head and robot base can then be moved, the coil raised with <strong>Move coil up</strong>, or another branch selected, and the same scan resumed. An IK failure still stops the scan because there is no colliding pose to inspect. Placements are converted with the same pipeline-to-robot axis convention as the simulated robot and then into the robot base frame, so the planned world pose and an executed target agree even after the base is moved.</p>
+<h2 id="method">Method<a class="anchor" href="#method" aria-hidden="true">#</a></h2>
+<p>The scene is compiled from the selected robot's MJCF model and the subject skin surface. MuJoCo evaluates contacts and nearest distances; ikpy solves the same URDF chain that the simulated robot uses. The scan follows the production direct-or-upward rule. It compares the largest per-axis translation with <code>TRANSLATION_THRESHOLD</code> (millimetres) and the largest per-axis rotation with <code>ROTATION_THRESHOLD</code> (degrees). If either limit is exceeded, the arm climbs to <code>SAFE_HEIGHT</code> (millimetres), traverses above the head and descends. Otherwise it uses a direct joint-space line. There is no separate 20 mm retract waypoint. Each segment is sampled at 30 waypoints and every waypoint is checked. The same three values are also used by the manual move-away and emergency paths, where the arm always climbs to <code>SAFE_HEIGHT</code>.</p>
+<p>A head penetration of 4 mm or more and a self-penetration of 2 mm or more count as collisions. The 4 mm head allowance matches the production simulation, where the coil is pressed into the scalp. Head clearance of 10 mm or less is not reported as a near miss, because the coil is often close to the scalp; the always-on contact-colour overlay shows that clearance on the links.</p>
+<p>Self-collision ignores overlaps shallower than 2 mm. The robot's collision meshes overlap by about 1 mm at some wrist configurations even though the rendered links look clear, so these shallow self-contacts are treated as mesh overlap. A self-penetration of 2 mm or more still pauses the scan. This tolerance is a modelling limit, not a hardware safety margin.</p>
+<p>MuJoCo is described in Todorov, Erez and Tassa (2012), <em>MuJoCo: A physics engine for model-based control</em>, IEEE/RSJ International Conference on Intelligent Robots and Systems. ikpy is a pure-Python inverse-kinematics library built on the URDF joint chain.</p>
+<div class="admonition danger"><p class="admonition-title"><span class="icon">⛔</span>Safety: planning aid, not a certificate</p><p>The scene contains the head phantom only. It does not model the subject's shoulders, torso, chair or the room. The path is a joint-space interpolation, not the production controller's exact trajectory. The real robot controller and its force/safety limits remain the final authority.</p></div>
+<h2 id="enable-it">Enable it<a class="anchor" href="#enable-it" aria-hidden="true">#</a></h2>
+<p>Press <strong>Enable collision test</strong>. The first enable builds the local world and IK chain; later scans reuse it. The page also loads the project head mesh and converts its skin surface to an STL, so the phantom matches the subject.</p>
+<p>The 3D view uses the same embedded renderer as the simulated robot view. Drag to orbit, right-drag to pan, wheel to zoom, double click to reset. Its top-right overlay mirrors the Control page: <strong>Total targets</strong> and <strong>Current</strong> show the same <code>pulse 0 · 1/1 · target 44</code> counters. The path waypoint is in the status line below the scan controls. The collision test checks the target geometry; it does not fire stimulation pulses.</p>
+<h2 id="position-the-subject-and-robot">Position the subject and robot<a class="anchor" href="#position-the-subject-and-robot" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Control</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><strong>Robot base</strong></td><td>mm, deg</td><td>Where the robot stands in the room and how it is rotated</td></tr>
+<tr><td><strong>Subject placement</strong></td><td>mm, deg</td><td>Where the SimNIBS head origin sits relative to the robot base</td></tr>
+</tbody></table></div>
+<p>Each row has −/+ buttons for a small nudge. Changing either pose resets the arm to the stored start configuration and updates the collision label.</p>
+<p>The head and robot base are <strong>relative descriptions</strong> of the tested cell. They do not move the real robot base; they record the arrangement you validated.</p>
+<h2 id="jog-the-coil">Jog the coil<a class="anchor" href="#jog-the-coil" aria-hidden="true">#</a></h2>
+<p>The jog pad moves the coil site in <strong>world XYZ</strong> and rotates about the <strong>tool axes</strong>. The numbers beside the axis names show the current coil-site pose in world millimetres and tool degrees. The IK solver converts each request to joint angles and rejects a target it cannot reach; the status line says when a jog failed.</p>
+<p>Use a small step for final placement. A red <code>COLLISION</code> or amber <code>NEAR MISS</code> label updates after every jog.</p>
+<h2 id="cobot-pose-setting">Cobot pose setting<a class="anchor" href="#cobot-pose-setting" aria-hidden="true">#</a></h2>
+<p>Three radio groups choose the IK branch. Every option stays visible, so a branch never depends on a dropdown popup:</p>
+<ul>
+<li><strong>Shoulder left</strong> or <strong>Shoulder right</strong>, the sign of the first active joint;</li>
+<li><strong>Arm up</strong> or <strong>Arm down</strong>, the sign of the third active joint;</li>
+<li><strong>Wrist normal</strong> or <strong>Wrist flipped</strong>, the sign of the fifth active joint.</li>
+</ul>
+<p>The elbow boundary is inclusive: a straight arm has zero on the third joint and is the Omron arm-up pose. The simulator's power-on configuration is the same zero joint pose, and the collision test starts from that pose as well. A new setup defaults to shoulder right, arm up, wrist normal; a branch saved in the project or lab profile still wins for that setup. The wrist sign is evaluated on the canonical joint angle in [-180°, 180°], not on an arbitrary 360° representation. This keeps normal and flipped physically distinct instead of showing the same pose twice.</p>
+<p>A 6R arm can have up to eight IK solutions. Some are unreachable because of joint limits or collisions. Press <strong>Set start pose from selection</strong> to solve the chosen branch for the coil pose the robot currently holds. The coil placement stays fixed; only the arm configuration changes. If only a colliding solution exists, it still stores that pose and warns you to adjust the base/head before scanning. If no solution exists, it leaves the current pose untouched, keeps your radio selection, and asks you to jog to another pose. The resulting six joints become the start configuration and are sent to the Control page, so both pages show the same cobot pose. <strong>Move coil up</strong> moves the local arm to the configured safe Z while keeping the coil orientation; it does not change the stored start pose.</p>
+<h2 id="movement-limits">Movement limits<a class="anchor" href="#movement-limits" aria-hidden="true">#</a></h2>
+<p>The compact row under <strong>Cobot pose setting</strong> exposes the three values that decide between a direct move and the safe-height path. They are also shown on <strong>Config › Lab</strong> under <strong>Cobot pose</strong>:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Field</th>
+<th><code>.env</code> key</th>
+<th>Unit</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td>Safe Z</td><td><code>SAFE_HEIGHT</code></td><td>mm</td><td>Z above the robot base that the arm climbs to before traversing</td></tr>
+<tr><td>Translation thresh.</td><td><code>TRANSLATION_THRESHOLD</code></td><td>mm</td><td>Largest per-axis translation that still allows a direct move</td></tr>
+<tr><td>Rotation thresh.</td><td><code>ROTATION_THRESHOLD</code></td><td>deg</td><td>Largest per-axis rotation that still allows a direct move</td></tr>
+</tbody></table></div>
+<p>The fields start from the <code>.env</code> values in <code>neuropilot/.env</code>, the project collision block, or the lab collision block, in that order. They can be changed while a scan is running: the current target is replanned from the arm's present pose and the completed pulses stay in place. The values are stored in the project and lab collision blocks when <strong>Make project default</strong> or <strong>Make lab default</strong> is pressed. They are sent to the simulated robot on <code>Pipeline to Robot: Set motion limits</code> at the next experiment start. The names and units match <code>tms-robot-control/.env</code>; the production controller must handle the topic before it can apply project values without an <code>.env</code> restart.</p>
+<h2 id="run-the-scan">Run the scan<a class="anchor" href="#run-the-scan" aria-hidden="true">#</a></h2>
+<ol>
+<li>Load the project's placement file on the <strong>Project</strong> page.</li>
+<li>Choose a cobot pose and, if needed, adjust the movement limits.</li>
+<li>Press <strong>Start collision scan</strong>. The button becomes <strong>Pause collision scan</strong> while the scan runs; press it again to resume.</li>
+<li>Use <strong>Prev target</strong> and <strong>Next target</strong> around <strong>Stop</strong> to change the current target without restarting the scan.</li>
+<li>Set <strong>Movement speed</strong> in the row below the progress bar. It is linked to <strong>Default speed</strong> on the Control page and changes both the scan playback pace and the simulated experiment speed.</li>
+<li>The contact-colour overlay is always on. Green marks the outer near band, orange is halfway, red is close to contact and dark red is actual contact. A self-collision tints both involved links, and a head contact tints the head mesh.</li>
+</ol>
+<p>The scan follows the project's target-order file and repetition count, so its pulse numbers and target IDs match the Control page. Without an order file it uses every placement in file order. The progress bar counts reached pulses. <strong>Pause collision scan</strong> stops the timer but keeps the current path, target and completed results; the same button resumes. On a collision the scan pauses instead of ending, the message names the pulse and target, and the arm stays at the colliding waypoint. Move the coil up or change the base/head, then press <strong>Resume collision scan</strong>. The current target is replanned from the new pose.</p>
+<p>The robot base and subject placement can be changed while a scan is running. The scan continues from the current pulse, regenerates the remaining target poses from the new layout and replans the current target from the arm's present pose. It does not restart at pulse zero. The progress bar keeps the pulses already completed.</p>
+<p>Head proximity within the 10 mm band is not reported as a near miss: the coil is often close to the scalp. The always-on contact-colour overlay shows clearance on the visible link meshes instead. Transparent collision hulls stay hidden, and links outside the band keep their original colour. The collision line keeps a previous collision visible after the current pose becomes clear, and the completed summary reports any collision pauses that were resolved.</p>
+<p>An <strong>IK failure is not a collision</strong>. It means the selected shoulder, arm and wrist branch cannot reach that target from the previous pose. The scan keeps the chosen branch for every target and every safe-height waypoint; it never substitutes another arm shape. If a waypoint or target has no solution in that branch, the scan stops, leaves the arm at the last reached target, and says that the selected branch has no IK solution. This is the behaviour the simulated experiment uses when the start pose carries the same branch. The same decision is shown on the Config page and can be saved there with the lab profile.</p>
+<h2 id="save-and-use-the-result">Save and use the result<a class="anchor" href="#save-and-use-the-result" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Button</th>
+<th>Effect</th>
+</tr></thead><tbody>
+<tr><td><strong>Make project default</strong></td><td>Stores head pose, robot base, cobot pose, branch, safe Z and movement limits in the project YAML</td></tr>
+<tr><td><strong>Make lab default</strong></td><td>Stores the same block in <code>~/.neuropilot/lab.yaml</code> for projects that do not override it</td></tr>
+<tr><td><strong>Use at start pose</strong></td><td>Queues the six-joint start pose and its branch for the next experiment start</td></tr>
+</tbody></table></div>
+<p>The project value wins over the lab default. The start pose and branch are sent on <code>Pipeline to Robot: Set start pose</code>; the simulated planner then solves every target and path waypoint in the same branch. The production <code>tms-robot-control</code> driver must handle that topic before a real run can use it. The head and base values are the validated cell description and remain part of the project record.</p>
+<h2 id="what-is-not-modelled-yet">What is not modelled yet<a class="anchor" href="#what-is-not-modelled-yet" aria-hidden="true">#</a></h2>
+<ul>
+<li>subject shoulders, torso, chair and table;</li>
+<li>the production controller's exact blend, force-control and press trajectory;</li>
+<li>cable routing and the robot's real joint limits beyond the URDF model;</li>
+<li>link 3 against link 5 self-contact, because MuJoCo convexifies mesh geoms and the convex hull of the forearm fills the wrist fork; the visual meshes have about 15 mm clearance in the folded pose that used to report a collision.</li>
+</ul>
+<p>Use the page to eliminate obvious bad layouts, then confirm the final cell on the real robot at low speed.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="real.html">Real session checklist</a>: the ordered hardware procedure.</li>
+<li><a href="../reference/relay.html">Relay reference</a>: the full message contract, including <code>Pipeline to Robot: Set start pose</code>.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../run/real.html"><span>Previous</span>Real session checklist</a>
+<a class="next" href="../run/manual.html"><span>Next</span>Manual mode</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#what-it-checks">What it checks</a></li><li class="l2"><a href="#method">Method</a></li><li class="l2"><a href="#enable-it">Enable it</a></li><li class="l2"><a href="#position-the-subject-and-robot">Position the subject and robot</a></li><li class="l2"><a href="#jog-the-coil">Jog the coil</a></li><li class="l2"><a href="#cobot-pose-setting">Cobot pose setting</a></li><li class="l2"><a href="#movement-limits">Movement limits</a></li><li class="l2"><a href="#run-the-scan">Run the scan</a></li><li class="l2"><a href="#save-and-use-the-result">Save and use the result</a></li><li class="l2"><a href="#what-is-not-modelled-yet">What is not modelled yet</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

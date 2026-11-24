@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add a theme · TMS NeuroPilot</title>
+<meta name="description" content="The token palette a theme must define and the contrast tests that guard it.">
+<meta property="og:title" content="Add a theme · TMS NeuroPilot">
+<meta property="og:description" content="The token palette a theme must define and the contrast tests that guard it.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2" hidden>
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7">
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li class="current"><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="add-a-theme">Add a theme<a class="anchor" href="#add-a-theme" aria-hidden="true">#</a></h1>
+<p>A theme is one dictionary of tokens in <code>controller/theme.py</code>. Everything else — the Qt style sheet, the charts, the 3-D viewport, the LEDs, the log bed — is generated from it.</p>
+<h2 id="1-copy-an-existing-theme">1. Copy an existing theme<a class="anchor" href="#1-copy-an-existing-theme" aria-hidden="true">#</a></h2>
+<p>Pick the theme closest to what you want and copy its block in <code>THEMES</code>:</p>
+<div class="code"><div class="code-head"><span>python</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-python">THEMES = {
+    ...
+    &quot;My Lab&quot;: {
+        &quot;ink&quot;: &quot;#1B1F24&quot;, &quot;muted&quot;: &quot;#5A636E&quot;, &quot;soft&quot;: &quot;#3C444D&quot;, &quot;mono&quot;: &quot;#38434E&quot;,
+        &quot;canvas&quot;: &quot;#F4F5F7&quot;, &quot;card&quot;: &quot;#FFFFFF&quot;, &quot;line&quot;: &quot;#E2E5E9&quot;,
+        &quot;edge&quot;: &quot;#D9DDE3&quot;, &quot;edge_hover&quot;: &quot;#C6CCD4&quot;, &quot;hover&quot;: &quot;#EEF0F2&quot;,
+        &quot;accent&quot;: &quot;#B45309&quot;, &quot;accent_dark&quot;: &quot;#92400E&quot;, &quot;accent_soft&quot;: &quot;#FDF3E7&quot;,
+        &quot;accent_disabled&quot;: &quot;#E3C6A2&quot;, &quot;on_accent&quot;: &quot;#FFFFFF&quot;,
+        &quot;disabled_bg&quot;: &quot;#F1F3F5&quot;, &quot;disabled_edge&quot;: &quot;#E7EAEE&quot;, &quot;disabled_ink&quot;: &quot;#A9B4BE&quot;,
+        &quot;ok&quot;: &quot;#15803D&quot;, &quot;ok_soft&quot;: &quot;#E8F5EC&quot;, &quot;warn&quot;: &quot;#A16207&quot;,
+        &quot;danger&quot;: &quot;#B91C1C&quot;, &quot;danger_soft&quot;: &quot;#FDF3F3&quot;, &quot;danger_edge&quot;: &quot;#EBC4C4&quot;,
+        &quot;bed&quot;: &quot;#12151A&quot;, &quot;bed_ink&quot;: &quot;#C9D4DE&quot;, &quot;bed_muted&quot;: &quot;#7C8794&quot;,
+        &quot;bed_sel&quot;: &quot;#2A333B&quot;,
+        &quot;scroll&quot;: &quot;#C6CCD4&quot;, &quot;scroll_hover&quot;: &quot;#AEB6C0&quot;,
+        &quot;led_off&quot;: &quot;#C9CFD6&quot;, &quot;grid&quot;: &quot;#E4E7EB&quot;,
+        &quot;series&quot;: [&quot;#1D4ED8&quot;, &quot;#C2410C&quot;, &quot;#15803D&quot;, &quot;#7E22CE&quot;, &quot;#0F766E&quot;, &quot;#BE185D&quot;],
+    },
+}</code></pre></div>
+<h2 id="2-the-token-contract">2. The token contract<a class="anchor" href="#2-the-token-contract" aria-hidden="true">#</a></h2>
+<p>Every theme must define every token. <code>tests/test_theme.py</code> iterates the table and fails on a missing key, so a typo is a test failure, not a black widget.</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Group</th>
+<th>Tokens</th>
+</tr></thead><tbody>
+<tr><td>text</td><td><code>ink</code>, <code>muted</code>, <code>soft</code>, <code>mono</code></td></tr>
+<tr><td>surfaces</td><td><code>canvas</code>, <code>card</code>, <code>line</code>, <code>edge</code>, <code>edge_hover</code>, <code>hover</code></td></tr>
+<tr><td>accent</td><td><code>accent</code>, <code>accent_dark</code>, <code>accent_soft</code>, <code>accent_disabled</code>, <code>on_accent</code></td></tr>
+<tr><td>disabled</td><td><code>disabled_bg</code>, <code>disabled_edge</code>, <code>disabled_ink</code></td></tr>
+<tr><td>status</td><td><code>ok</code>, <code>ok_soft</code>, <code>warn</code>, <code>danger</code>, <code>danger_soft</code>, <code>danger_edge</code></td></tr>
+<tr><td>instrument beds</td><td><code>bed</code>, <code>bed_ink</code>, <code>bed_muted</code>, <code>bed_sel</code></td></tr>
+<tr><td>misc</td><td><code>scroll</code>, <code>scroll_hover</code>, <code>led_off</code>, <code>grid</code></td></tr>
+<tr><td>charts</td><td><code>series</code> (exactly six colours)</td></tr>
+</tbody></table></div>
+<h2 id="3-satisfy-the-contrast-tests">3. Satisfy the contrast tests<a class="anchor" href="#3-satisfy-the-contrast-tests" aria-hidden="true">#</a></h2>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">pytest tests/test_theme.py -q</code></pre></div>
+<p>The tests compute WCAG ratios:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Pair</th>
+<th>Minimum</th>
+</tr></thead><tbody>
+<tr><td><code>ink</code> on <code>card</code></td><td>7:1</td></tr>
+<tr><td><code>ink</code> on <code>canvas</code></td><td>7:1</td></tr>
+<tr><td><code>muted</code> on <code>card</code></td><td>4.5:1</td></tr>
+<tr><td>status colours on <code>card</code></td><td>4.5:1</td></tr>
+<tr><td><code>on_accent</code> on <code>accent</code></td><td>4.5:1</td></tr>
+</tbody></table></div>
+<p><code>ok</code>, <code>warn</code>, <code>danger</code> are also used as <strong>text</strong>, so they must pass as text, not only as a fill. If your accent is bright, set <code>on_accent</code> to a dark ink (that is what Graphite and Midnight do).</p>
+<h2 id="4-pick-the-mode">4. Pick the mode<a class="anchor" href="#4-pick-the-mode" aria-hidden="true">#</a></h2>
+<p><code>is_dark(name)</code> is computed from the luminance of <code>canvas</code>. It decides which <code>on_accent</code> default and which chart treatment is appropriate; it is not a manual flag.</p>
+<h2 id="5-use-it">5. Use it<a class="anchor" href="#5-use-it" aria-hidden="true">#</a></h2>
+<p><strong>Config › Lab › Theme</strong> lists the new name automatically (the combo is populated from <code>THEMES</code>), and <code>UI_THEME=My Lab</code> works from <code>.env</code>. The choice is written to the lab profile when changed in the GUI.</p>
+<h2 id="6-check-the-parts-a-style-sheet-cannot-reach">6. Check the parts a style sheet cannot reach<a class="anchor" href="#6-check-the-parts-a-style-sheet-cannot-reach" aria-hidden="true">#</a></h2>
+<p>The theme is applied to more than the window. Open a session and check:</p>
+<ul>
+<li class="task"><input type="checkbox" disabled> status LEDs (green/red/grey) on Connections,</li>
+<li class="task"><input type="checkbox" disabled> the mode badge on Config › Lab,</li>
+<li class="task"><input type="checkbox" disabled> the log bed on Control,</li>
+<li class="task"><input type="checkbox" disabled> the MEP trend and the EMG trace (series colours and grid),</li>
+<li class="task"><input type="checkbox" disabled> the 3-D scalar bar and the placement spheres,</li>
+<li class="task"><input type="checkbox" disabled> the tab strip and its LED corner,</li>
+<li class="task"><input type="checkbox" disabled> disabled buttons and inputs.</li>
+</ul>
+<h2 id="7-document-it">7. Document it<a class="anchor" href="#7-document-it" aria-hidden="true">#</a></h2>
+<p>Add a row to the theme table in <a href="../gui/themes.html">Themes and display</a> — one line on the character and when to use it. A theme nobody can find is a theme nobody uses.</p>
+<h2 id="why-the-tests-are-strict">Why the tests are strict<a class="anchor" href="#why-the-tests-are-strict" aria-hidden="true">#</a></h2>
+<p>A theme that "looks fine" on one monitor can make a red LED invisible on another. The contrast tests are the objective floor; they do not replace looking at the actual screen in the lab.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../extend/robots.html"><span>Previous</span>Add a robot</a>
+<a class="next" href="../extend/components.html"><span>Next</span>Add a component</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#1-copy-an-existing-theme">1. Copy an existing theme</a></li><li class="l2"><a href="#2-the-token-contract">2. The token contract</a></li><li class="l2"><a href="#3-satisfy-the-contrast-tests">3. Satisfy the contrast tests</a></li><li class="l2"><a href="#4-pick-the-mode">4. Pick the mode</a></li><li class="l2"><a href="#5-use-it">5. Use it</a></li><li class="l2"><a href="#6-check-the-parts-a-style-sheet-cannot-reach">6. Check the parts a style sheet cannot reach</a></li><li class="l2"><a href="#7-document-it">7. Document it</a></li><li class="l2"><a href="#why-the-tests-are-strict">Why the tests are strict</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>

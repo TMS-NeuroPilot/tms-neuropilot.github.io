@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tms-neuropilot.github.io/sitemap.xml

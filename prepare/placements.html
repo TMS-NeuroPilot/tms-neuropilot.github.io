@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coil placements and target order · TMS NeuroPilot</title>
+<meta name="description" content="The placement library, the target-order file and how the loop consumes them.">
+<meta property="og:title" content="Coil placements and target order · TMS NeuroPilot">
+<meta property="og:description" content="The placement library, the target-order file and how the loop consumes them.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/css/site.css?v=475a9995">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<noscript><style>.nav-pages[hidden]{display:block}.nav-toggle{pointer-events:none}.chevron{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu" type="button" aria-label="Toggle navigation">☰</button>
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/img/neuropilot-icon.png"
+         alt="TMS NeuroPilot" width="30" height="30">
+    <span class="brand-name">TMS NeuroPilot</span>
+  </a>
+  <span class="tagline">Guided TMS mapping with per-pulse electric fields and online analysis</span>
+  <div class="search">
+    <input type="search" id="search" placeholder="Search docs…  (press /)"
+           autocomplete="off" aria-label="Search documentation">
+    <div class="results" id="results" hidden></div>
+  </div>
+  <a class="edition" href="https://tms-neuropilot.github.io/tms-neuropilot/" title="Release documentation - switch to the development version">main</a>
+  <button class="theme" type="button" title="Switch to the dark theme">Light</button>
+  <a class="repo" href="https://github.com/TMS-NeuroPilot/tms-neuropilot" target="_blank" rel="noopener" title="Source repository">GitHub ↗</a>
+</header>
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+<div class="nav-section" data-section="Start here">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-start-here-0"><span class="nav-title">Start here</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-start-here-0" hidden>
+<li><a href="../index.html">Overview</a></li>
+<li><a href="../start/use-cases.html">Use cases</a></li>
+<li><a href="../start/quickstart.html">Quick start</a></li>
+<li><a href="../start/concepts.html">Key concepts</a></li>
+<li><a href="../start/units.html">Units and frames</a></li>
+</ul></div>
+<div class="nav-section" data-section="Install">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-install-1"><span class="nav-title">Install</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-install-1" hidden>
+<li><a href="../install/prerequisites.html">Prerequisites</a></li>
+<li><a href="../install/install.html">Install the suite</a></li>
+<li><a href="../install/hardware.html">Hardware setup</a></li>
+<li><a href="../install/verify.html">Verify the installation</a></li>
+</ul></div>
+<div class="nav-section active" data-section="Prepare a session">
+<button class="nav-toggle" type="button" aria-expanded="true" aria-controls="nav-prepare-a-session-2"><span class="nav-title">Prepare a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-prepare-a-session-2">
+<li><a href="../prepare/subject-data.html">Subject data</a></li>
+<li><a href="../prepare/efield-library.html">E-field library</a></li>
+<li class="current"><a href="../prepare/placements.html">Coil placements and target order</a></li>
+<li><a href="../prepare/emg.html">EMG channels and MEP windows</a></li>
+<li><a href="../prepare/project.html">The project file</a></li>
+<li><a href="../prepare/study.html">Study profiles</a></li>
+</ul></div>
+<div class="nav-section" data-section="Run a session">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-run-a-session-3"><span class="nav-title">Run a session</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-run-a-session-3" hidden>
+<li><a href="../run/modes.html">Run modes</a></li>
+<li><a href="../run/simulated.html">A simulated session</a></li>
+<li><a href="../run/real.html">Real session checklist</a></li>
+<li><a href="../run/collision-test.html">Collision test</a></li>
+<li><a href="../run/manual.html">Manual mode</a></li>
+<li><a href="../run/efield-modes.html">E-field modes</a></li>
+<li><a href="../run/mapping-loop.html">The mapping loop</a></li>
+</ul></div>
+<div class="nav-section" data-section="GUI reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-gui-reference-4"><span class="nav-title">GUI reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-gui-reference-4" hidden>
+<li><a href="../gui/project.html">Project page</a></li>
+<li><a href="../gui/connections.html">Connections page</a></li>
+<li><a href="../gui/control.html">Control page</a></li>
+<li><a href="../gui/mep.html">MEP results page</a></li>
+<li><a href="../gui/cortical.html">Cortical results page</a></li>
+<li><a href="../gui/config.html">Config page</a></li>
+<li><a href="../gui/themes.html">Themes and display</a></li>
+</ul></div>
+<div class="nav-section" data-section="Configuration">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-configuration-5"><span class="nav-title">Configuration</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-configuration-5" hidden>
+<li><a href="../config/model.html">Settings model</a></li>
+<li><a href="../config/env.html">.env reference</a></li>
+<li><a href="../config/lab.html">Lab profile reference</a></li>
+</ul></div>
+<div class="nav-section" data-section="Results">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-results-6"><span class="nav-title">Results</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-results-6" hidden>
+<li><a href="../results/analysis.html">Analysis and fits</a></li>
+<li><a href="../results/export.html">Export and data formats</a></li>
+</ul></div>
+<div class="nav-section" data-section="Extend">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-extend-7"><span class="nav-title">Extend</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-extend-7" hidden>
+<li><a href="../extend/robots.html">Add a robot</a></li>
+<li><a href="../extend/themes.html">Add a theme</a></li>
+<li><a href="../extend/components.html">Add a component</a></li>
+</ul></div>
+<div class="nav-section" data-section="Reference">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-reference-8"><span class="nav-title">Reference</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-reference-8" hidden>
+<li><a href="../reference/architecture.html">Architecture</a></li>
+<li><a href="../reference/relay.html">Relay protocol</a></li>
+<li><a href="../reference/cli.html">Command line</a></li>
+<li><a href="../reference/testing.html">Testing and CI</a></li>
+<li><a href="../reference/troubleshooting.html">Troubleshooting</a></li>
+<li><a href="../reference/glossary.html">Glossary</a></li>
+<li><a href="../reference/changelog.html">Changelog</a></li>
+</ul></div>
+<div class="nav-section" data-section="About">
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-about-9"><span class="nav-title">About</span><span class="chevron" aria-hidden="true"></span></button>
+<ul class="nav-pages" id="nav-about-9" hidden>
+<li><a href="../about.html">About the project</a></li>
+</ul></div>
+  </nav>
+  <main id="content">
+    <article>
+<h1 id="coil-placements-and-target-order">Coil placements and target order<a class="anchor" href="#coil-placements-and-target-order" aria-hidden="true">#</a></h1>
+<p>The placements file says <em>where the coil can go</em>. The target-order file says <em>where it goes next</em>. Both are index-aligned with the E-field library, which is what keeps the regression consistent.</p>
+<h2 id="the-placements-file">The placements file<a class="anchor" href="#the-placements-file" aria-hidden="true">#</a></h2>
+<p><code>search_positions.hdf5</code> from SimNIBS <code>TMSoptimize</code> (or the group's wrapper):</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Dataset</th>
+<th>Shape</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><code>matsimnibs</code></td><td><code>(4, 4, n)</code> float</td><td>one coil matrix per placement, mm, SimNIBS space</td></tr>
+<tr><td><code>centers</code></td><td><code>(n, 3)</code> float, optional</td><td>coil centre per placement</td></tr>
+<tr><td><code>m0</code>, <code>m1</code>, <code>m2</code></td><td><code>(n, 3)</code> float, optional</td><td>coil axes, for inspection</td></tr>
+</tbody></table></div>
+<p>The controller reads <strong>only</strong> <code>matsimnibs</code>. Each matrix follows the convention in <a href="../start/units.html">Units and frames</a>: translation is the stimulation point, rotation columns are the coil axes.</p>
+<div class="admonition warning"><p class="admonition-title"><span class="icon">⚠</span>Order is meaning</p><p>Row <em>i</em> of <code>matsimnibs</code> is column <em>i</em> of <code>E_mag</code>. If you sort, subsample or filter the placements, you must apply the same reordering to the E-field library. <code>sort_coil_placements.py</code> exists for exactly this reason — see below.</p></div>
+<h2 id="the-target-order-file">The target-order file<a class="anchor" href="#the-target-order-file" aria-hidden="true">#</a></h2>
+<p>A plain text file with one integer per line:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">44
+477
+391
+156
+22</code></pre></div>
+<p>Rules:</p>
+<ul>
+<li>indices into the placements file, <strong>0-based</strong> (the first placement is <code>0</code>);</li>
+<li>one target per line; whitespace and blank lines are fine;</li>
+<li>values must be integers and <code>0 &lt;= index &lt; n_placements</code>;</li>
+<li>the file is validated when you load it, not when you press Start.</li>
+</ul>
+<p>An invalid file is rejected with a message naming the offending index:</p>
+<div class="code"><div class="code-head"><span>text</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-text">Target order ernie.txt references target 500, but only 500 placements exist.</code></pre></div>
+<p>If you do not load an order file, the controller stimulates <strong>all placements in file order</strong> — useful for a first test, slow for a real session.</p>
+<div class="admonition tip"><p class="admonition-title"><span class="icon">💡</span>Repeats are allowed</p><p>The order file may repeat an index. A protocol that alternates between two hot spots, or returns to the best target at the end, is just a longer list.</p></div>
+<h2 id="choosing-an-order">Choosing an order<a class="anchor" href="#choosing-an-order" aria-hidden="true">#</a></h2>
+<p><code>scripts/03_create_optimized_sequences.py</code> selects a subset of placements that constrains the regression well and writes an order file:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python scripts/03_create_optimized_sequences.py \
+    --e-hdf5 data/&lt;subj&gt;/efield/e.hdf5 \
+    --n-stim 200 \
+    --out-dir data/&lt;subj&gt;/coil_path</code></pre></div>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Flag</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr><td><code>--e-hdf5</code></td><td>required</td><td>the E-field library to select from</td></tr>
+<tr><td><code>--n-stim</code></td><td>500</td><td>number of pulses to plan</td></tr>
+<tr><td><code>--out-dir</code></td><td>next to the library</td><td>where the order files are written</td></tr>
+<tr><td><code>--seed</code></td><td>42</td><td>RNG seed for the random baseline</td></tr>
+<tr><td><code>--dataset</code></td><td><code>E_mag</code></td><td>which field dataset to use</td></tr>
+<tr><td><code>--normalize</code></td><td><code>none</code></td><td>feature normalisation before selection</td></tr>
+<tr><td><code>--rbf-tau</code>, <code>--rbf-ridge</code></td><td><code>auto</code>, <code>0.0</code></td><td>RBF kernel width / ridge for D-optimal</td></tr>
+<tr><td><code>--w-pos</code>, <code>--w-ang</code></td><td>2.0, 1.0</td><td>travel cost weights (position mm, angle deg)</td></tr>
+<tr><td><code>--no-auto-sort</code></td><td>off</td><td>keep the selection order instead of travel-sorting</td></tr>
+</tbody></table></div>
+<p>It writes one file per strategy (<code>RANDOM</code>, <code>FPS</code>, <code>D-Optimal</code>, …) plus a <code>*_travel_sorted.txt</code> variant. <strong>Use the travel-sorted file</strong>: the robot spends most of its time moving between targets, and a spatially coherent order roughly halves the session duration.</p>
+<h2 id="sorting-placements-for-travel">Sorting placements for travel<a class="anchor" href="#sorting-placements-for-travel" aria-hidden="true">#</a></h2>
+<p>If you already have a placement file and an order, reorder both together:</p>
+<div class="code"><div class="code-head"><span>bash</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">python scripts/sort_coil_placements.py \
+    --matsimnibs data/&lt;subj&gt;/efield/search_positions.hdf5 \
+    --coil-seq   data/&lt;subj&gt;/coil_path/selected.txt \
+    --out-dir    data/&lt;subj&gt;/coil_path</code></pre></div>
+<p>The script writes a new <code>matsimnibs</code> file, the matching order file and an XDMF for visual inspection. Use the outputs as the project's <code>targets_file</code> and <code>target_order_fn</code>; do not mix the sorted order with the unsorted library.</p>
+<h2 id="common-mistakes">Common mistakes<a class="anchor" href="#common-mistakes" aria-hidden="true">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symptom</th>
+<th>Cause</th>
+</tr></thead><tbody>
+<tr><td><code>references target N, but only M placements exist</code></td><td>order file is 1-based or from another subject</td></tr>
+<tr><td><code>contains non-integer entries</code></td><td>a header line, a comma-separated list or a float</td></tr>
+<tr><td>every pulse uses the same field</td><td>order file lists one index repeatedly</td></tr>
+<tr><td>map looks spatially scrambled</td><td>sorted placements paired with an unsorted library</td></tr>
+<tr><td>robot takes a long path between targets</td><td>raw algorithm order instead of <code>*_travel_sorted.txt</code></td></tr>
+<tr><td><code>Coil at target</code> never arrives</td><td>placement is outside the robot's reach or collides</td></tr>
+</tbody></table></div>
+<h2 id="next">Next<a class="anchor" href="#next" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="emg.html">EMG channels and MEP windows</a></li>
+<li><a href="project.html">The project file</a></li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page">
+<a class="prev" href="../prepare/efield-library.html"><span>Previous</span>E-field library</a>
+<a class="next" href="../prepare/emg.html"><span>Next</span>EMG channels and MEP windows</a>
+    </nav>
+    <footer class="page-foot">
+      <a href="https://github.com/TMS-NeuroPilot/tms-neuropilot/issues" target="_blank" rel="noopener">Report a problem</a>
+      <span>·</span>
+      <a href="../search.html">Search all pages</a>
+    </footer>
+  </main>
+  <aside class="toc" aria-label="On this page">
+<p class="toc-title">On this page</p><ul><li class="l2"><a href="#the-placements-file">The placements file</a></li><li class="l2"><a href="#the-target-order-file">The target order file</a></li><li class="l2"><a href="#choosing-an-order">Choosing an order</a></li><li class="l2"><a href="#sorting-placements-for-travel">Sorting placements for travel</a></li><li class="l2"><a href="#common-mistakes">Common mistakes</a></li><li class="l2"><a href="#next">Next</a></li></ul>
+  </aside>
+</div>
+<script>window.SITE_ROOT = "../";</script>
+<script src="../assets/js/site.js?v=475a9995"></script>
+</body>
+</html>
